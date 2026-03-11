@@ -18,10 +18,10 @@
       <a href="/" class="header__logo-link">
         {%- if section.settings.logo != blank -%}
           <img
-            src="{{ section.settings.logo | image_url: width: 200 }}"
+            src="{{ section.settings.logo | image_url: width: 100 }}"
             alt="{{ shop.name }}"
-            width="200"
-            height="{{ 200 | divided_by: section.settings.logo.aspect_ratio | round }}"
+            width="100"
+            height="{{ 100 | divided_by: section.settings.logo.aspect_ratio | round }}"
             loading="eager"
           >
         {%- else -%}
