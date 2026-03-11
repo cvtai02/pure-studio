@@ -1,20 +1,33 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image-banner": {
       "type": "image-banner",
       "settings": {
+        "video_url": "",
+        "banner_height": "100vh",
+        "overlay_opacity": 40,
+        "eyebrow": "",
         "heading": "Beyond Yesterday's Limits",
         "subheading": "Performance gear designed for the adventures that push you and your best friend further.",
         "button_label": "Shop the Collection",
         "button_link": "shopify://collections/all",
-        "text_alignment": "left",
-        "overlay_opacity": 40
+        "text_alignment": "left"
       }
     },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
         "heading": "What's Trending",
+        "collection": "",
         "products_to_show": 8,
         "columns": 4,
         "show_view_all": true
@@ -22,6 +35,18 @@
     },
     "category-explorer": {
       "type": "category-explorer",
+      "blocks": {
+        "category_ar4zF3": {
+          "type": "category",
+          "settings": {
+            "label": "Category",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_ar4zF3"
+      ],
       "settings": {
         "heading": "Explore Categories"
       }
@@ -30,6 +55,7 @@
       "type": "featured-collection",
       "settings": {
         "heading": "Explore Specials",
+        "collection": "",
         "products_to_show": 8,
         "columns": 4,
         "show_view_all": true
@@ -42,6 +68,7 @@
         "heading": "The Collection",
         "text": "Lighter, stronger, faster. This collection represents the forefront of innovation, designed to take you further.",
         "button_label": "Shop the Collection",
+        "button_link": "",
         "content_style": "dark",
         "reverse_layout": false
       }
@@ -49,11 +76,12 @@
     "feature-banner": {
       "type": "feature-banner",
       "settings": {
+        "min_height": 500,
         "eyebrow": "Featured Blog",
         "heading": "About the Collection",
         "text": "Lighter, stronger, faster. This collection represents the forefront of innovation, designed to take you and your adventures further.",
         "button_label": "Learn More",
-        "min_height": 500
+        "button_link": ""
       }
     },
     "newsletter": {
