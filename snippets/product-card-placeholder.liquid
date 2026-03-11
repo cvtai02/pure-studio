@@ -1,0 +1,11 @@
+<div class="product-card product-card--placeholder">
+  <div class="product-card__image-wrapper">
+    {{ 'product-1' | placeholder_svg_tag: 'product-card__placeholder' }}
+  </div>
+  <div class="product-card__info">
+    <h3 class="product-card__title">{{ 'general.onboarding.product_title' | t }}</h3>
+    <div class="product-card__price">
+      <span class="product-card__price--regular">{{ 1999 | money }}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,125 @@
+<footer class="footer" data-section-id="{{ section.id }}">
+  <div class="page-width">
+    <div class="footer__grid">
+      {%- for block in section.blocks -%}
+        <div class="footer__block" {{ block.shopify_attributes }}>
+          {%- case block.type -%}
+            {%- when 'menu' -%}
+              {%- if block.settings.heading != blank -%}
+                <h3 class="footer__heading h4">{{ block.settings.heading }}</h3>
+              {%- endif -%}
+              {%- if block.settings.menu != blank -%}
+                <ul class="footer__menu list-unstyled" role="list">
+                  {%- for link in block.settings.menu.links -%}
+                    <li>
+                      <a href="{{ link.url }}" class="footer__menu-link">{{ link.title }}</a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
+
+            {%- when 'text' -%}
+              {%- if block.settings.heading != blank -%}
+                <h3 class="footer__heading h4">{{ block.settings.heading }}</h3>
+              {%- endif -%}
+              <div class="footer__text rte">{{ block.settings.text }}</div>
+
+            {%- when 'social' -%}
+              {%- if block.settings.heading != blank -%}
+                <h3 class="footer__heading h4">{{ block.settings.heading }}</h3>
+              {%- endif -%}
+              {% render 'social-icons' %}
+          {%- endcase -%}
+        </div>
+      {%- endfor -%}
+    </div>
+
+    <div class="footer__bottom">
+      <div class="footer__copyright">
+        <small>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. {{ 'general.footer.powered_by' | t }}</small>
+      </div>
+      <div class="footer__payment">
+        {%- unless shop.enabled_payment_types == empty -%}
+          <ul class="footer__payment-list list-unstyled" role="list">
+            {%- for type in shop.enabled_payment_types -%}
+              <li class="footer__payment-item">
+                {{ type | payment_type_svg_tag: class: 'icon icon-payment' }}
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endunless -%}
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "section-footer",
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Quick links"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu",
+          "default": "footer"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "About us"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Share store details, promotions, or brand content with your customers.</p>"
+        }
+      ]
+    },
+    {
+      "type": "social",
+      "name": "Social media",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Follow us"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "menu"
+      },
+      {
+        "type": "text"
+      },
+      {
+        "type": "social"
+      }
+    ]
+  }
+}
+{% endschema %}

@@ -1,0 +1,33 @@
+<section class="related-products section-{{ section.id }}" data-section-id="{{ section.id }}">
+  {%- if recommendations.performed and recommendations.products_count > 0 -%}
+    <div class="page-width">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="related-products__heading section-heading text-center">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+
+      <div class="related-products__grid grid grid--4">
+        {%- for product in recommendations.products limit: 4 -%}
+          <div class="grid__item">
+            {% render 'product-card', product: product %}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Related products",
+  "tag": "section",
+  "class": "section-related-products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "You may also like"
+    }
+  ]
+}
+{% endschema %}

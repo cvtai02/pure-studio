@@ -1,0 +1,40 @@
+{
+  "sections": {
+    "image-banner": {
+      "type": "image-banner",
+      "settings": {
+        "heading": "Welcome to {{ shop.name }}",
+        "subheading": "Discover our curated collection of premium products",
+        "button_label": "Shop now",
+        "button_link": "shopify://collections/all"
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Featured Collection",
+        "collection": ""
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "settings": {
+        "heading": "About our store",
+        "text": "<p>Share your brand story with customers. Describe a product, announce promotions, or welcome visitors to your store.</p>"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Subscribe to our emails",
+        "subheading": "Be the first to know about new collections and exclusive offers."
+      }
+    }
+  },
+  "order": [
+    "image-banner",
+    "featured-collection",
+    "rich-text",
+    "newsletter"
+  ]
+}

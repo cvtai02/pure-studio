@@ -1,0 +1,81 @@
+<section class="main-cart section-{{ section.id }}" data-section-id="{{ section.id }}">
+  <div class="page-width">
+    <h1 class="main-cart__heading section-heading">{{ 'general.cart.title' | t }}</h1>
+
+    {%- if cart.item_count > 0 -%}
+      <form action="{{ routes.cart_url }}" method="post" class="cart__form">
+        <table class="cart__table">
+          <thead>
+            <tr>
+              <th class="cart__header" colspan="2">{{ 'general.cart.product' | t }}</th>
+              <th class="cart__header">{{ 'general.cart.price' | t }}</th>
+              <th class="cart__header">{{ 'general.cart.quantity' | t }}</th>
+              <th class="cart__header text-right">{{ 'general.cart.total' | t }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%- for item in cart.items -%}
+              <tr class="cart__item">
+                <td class="cart__item-image">
+                  <a href="{{ item.url }}">
+                    <img
+                      src="{{ item.image | image_url: width: 150 }}"
+                      alt="{{ item.title | escape }}"
+                      width="150"
+                      height="{{ 150 | divided_by: item.image.aspect_ratio | round }}"
+                      loading="lazy"
+                    >
+                  </a>
+                </td>
+                <td class="cart__item-details">
+                  <a href="{{ item.url }}" class="cart__item-title">{{ item.product.title }}</a>
+                  {%- unless item.product.has_only_default_variant -%}
+                    <p class="cart__item-variant">{{ item.variant.title }}</p>
+                  {%- endunless -%}
+                </td>
+                <td class="cart__item-price">{{ item.price | money }}</td>
+                <td class="cart__item-quantity">
+                  <input
+                    type="number"
+                    name="updates[]"
+                    value="{{ item.quantity }}"
+                    min="0"
+                    class="cart__quantity-input field__input"
+                    aria-label="{{ 'general.cart.quantity' | t }}"
+                  >
+                </td>
+                <td class="cart__item-total text-right">{{ item.line_price | money }}</td>
+              </tr>
+            {%- endfor -%}
+          </tbody>
+        </table>
+
+        <div class="cart__footer">
+          <div class="cart__subtotal">
+            <span>{{ 'general.cart.subtotal' | t }}</span>
+            <span class="cart__subtotal-price">{{ cart.total_price | money }}</span>
+          </div>
+          <p class="cart__note">{{ 'general.cart.taxes_and_shipping' | t }}</p>
+          <button type="submit" name="checkout" class="button button--primary cart__checkout">
+            {{ 'general.cart.checkout' | t }}
+          </button>
+        </div>
+      </form>
+    {%- else -%}
+      <div class="cart__empty text-center">
+        <p>{{ 'general.cart.empty' | t }}</p>
+        <a href="{{ routes.all_products_collection_url }}" class="button button--primary">
+          {{ 'general.cart.continue_shopping' | t }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cart",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}

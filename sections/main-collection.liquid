@@ -1,0 +1,51 @@
+<section class="main-collection section-{{ section.id }}" data-section-id="{{ section.id }}">
+  <div class="page-width">
+    <h1 class="main-collection__heading section-heading">{{ collection.title }}</h1>
+
+    {%- if collection.description != blank -%}
+      <div class="main-collection__description rte">{{ collection.description }}</div>
+    {%- endif -%}
+
+    {%- paginate collection.products by section.settings.products_per_page -%}
+      <div class="main-collection__grid grid grid--{{ section.settings.columns }}">
+        {%- for product in collection.products -%}
+          <div class="grid__item">
+            {% render 'product-card', product: product %}
+          </div>
+        {%- endfor -%}
+      </div>
+
+      {%- if paginate.pages > 1 -%}
+        {% render 'pagination', paginate: paginate %}
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product grid",
+  "tag": "section",
+  "class": "section-main-collection",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "label": "Products per page",
+      "min": 4,
+      "max": 24,
+      "step": 4,
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Number of columns",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    }
+  ]
+}
+{% endschema %}

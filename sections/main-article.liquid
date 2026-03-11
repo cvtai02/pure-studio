@@ -1,0 +1,85 @@
+<section class="main-article section-{{ section.id }}" data-section-id="{{ section.id }}">
+  <div class="page-width">
+    <article class="article">
+      <header class="article__header">
+        <h1 class="article__title h1">{{ article.title }}</h1>
+        <div class="article__meta">
+          <span class="article__date">{{ article.published_at | date: format: 'abbreviated_date' }}</span>
+          <span class="article__author">{{ article.author }}</span>
+        </div>
+      </header>
+
+      {%- if article.image -%}
+        <div class="article__image">
+          <img
+            src="{{ article.image | image_url: width: 1200 }}"
+            alt="{{ article.image.alt | escape }}"
+            width="1200"
+            height="{{ 1200 | divided_by: article.image.aspect_ratio | round }}"
+            loading="eager"
+          >
+        </div>
+      {%- endif -%}
+
+      <div class="article__content rte">
+        {{ article.content }}
+      </div>
+
+      {%- if blog.comments_enabled? -%}
+        <div class="article__comments">
+          <h2 class="article__comments-heading h3">{{ 'blogs.article.comments' | t }} ({{ article.comments_count }})</h2>
+
+          {%- for comment in article.comments -%}
+            <div class="article__comment">
+              <p class="article__comment-author">{{ comment.author }}</p>
+              <p class="article__comment-date">{{ comment.created_at | date: format: 'abbreviated_date' }}</p>
+              <div class="article__comment-content">{{ comment.content }}</div>
+            </div>
+          {%- endfor -%}
+
+          {% form 'new_comment', article, class: 'article__comment-form' %}
+            {%- if form.errors -%}
+              <div class="form__message form__message--error">
+                {{ form.errors | default_errors }}
+              </div>
+            {%- endif -%}
+
+            {%- if form.posted_successfully? -%}
+              <div class="form__message form__message--success">
+                {%- if blog.moderated? -%}
+                  <p>{{ 'blogs.article.comment_under_moderation' | t }}</p>
+                {%- else -%}
+                  <p>{{ 'blogs.article.comment_posted' | t }}</p>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+
+            <div class="form__group">
+              <label for="CommentAuthor" class="field__label">{{ 'blogs.article.name' | t }}</label>
+              <input type="text" name="comment[author]" id="CommentAuthor" class="field__input" value="{{ form.author }}" required>
+            </div>
+            <div class="form__group">
+              <label for="CommentEmail" class="field__label">{{ 'blogs.article.email' | t }}</label>
+              <input type="email" name="comment[email]" id="CommentEmail" class="field__input" value="{{ form.email }}" required autocomplete="email">
+            </div>
+            <div class="form__group">
+              <label for="CommentBody" class="field__label">{{ 'blogs.article.message' | t }}</label>
+              <textarea name="comment[body]" id="CommentBody" class="field__input" required>{{ form.body }}</textarea>
+            </div>
+            <button type="submit" class="button button--primary">{{ 'blogs.article.post_comment' | t }}</button>
+          {% endform %}
+        </div>
+      {%- endif -%}
+
+      <a href="{{ blog.url }}" class="article__back-link">&larr; {{ 'blogs.article.back_to_blog' | t: title: blog.title }}</a>
+    </article>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog post",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,35 @@
+{
+  "current": {
+    "color_primary": "#1a1a2e",
+    "color_secondary": "#16213e",
+    "color_accent": "#e94560",
+    "color_text": "#1a1a2e",
+    "color_text_light": "#6c757d",
+    "color_background": "#ffffff",
+    "color_background_secondary": "#f8f9fa",
+    "type_body_font_size": 16,
+    "type_header_font_size_scale": 100,
+    "page_width": 1200,
+    "section_spacing": 48,
+    "button_border_radius": 4,
+    "button_color": "#1a1a2e",
+    "button_text_color": "#ffffff",
+    "social_facebook_link": "",
+    "social_instagram_link": "",
+    "social_twitter_link": "",
+    "social_youtube_link": "",
+    "social_tiktok_link": "",
+    "social_pinterest_link": "",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {}
+      }
+    },
+    "content_for_index": []
+  }
+}

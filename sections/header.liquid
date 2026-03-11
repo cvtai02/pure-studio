@@ -1,0 +1,123 @@
+<header class="header" data-section-id="{{ section.id }}">
+  <div class="page-width header__wrapper">
+    {%- comment -%} Logo {%- endcomment -%}
+    <div class="header__logo">
+      <a href="/" class="header__logo-link">
+        {%- if section.settings.logo != blank -%}
+          <img
+            src="{{ section.settings.logo | image_url: width: 200 }}"
+            alt="{{ shop.name }}"
+            width="200"
+            height="{{ 200 | divided_by: section.settings.logo.aspect_ratio | round }}"
+            loading="eager"
+          >
+        {%- else -%}
+          <span class="header__logo-text h2">{{ shop.name }}</span>
+        {%- endif -%}
+      </a>
+    </div>
+
+    {%- comment -%} Navigation {%- endcomment -%}
+    <nav class="header__nav" aria-label="Main navigation">
+      <ul class="header__menu list-unstyled" role="list">
+        {%- for link in section.settings.menu.links -%}
+          <li class="header__menu-item">
+            {%- if link.links != blank -%}
+              <details class="header__dropdown">
+                <summary class="header__menu-link">
+                  {{ link.title }}
+                  <svg class="icon icon-caret" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </summary>
+                <ul class="header__submenu list-unstyled" role="list">
+                  {%- for child_link in link.links -%}
+                    <li>
+                      <a href="{{ child_link.url }}" class="header__submenu-link">
+                        {{ child_link.title }}
+                      </a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </details>
+            {%- else -%}
+              <a href="{{ link.url }}" class="header__menu-link">{{ link.title }}</a>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+
+    {%- comment -%} Icons {%- endcomment -%}
+    <div class="header__icons">
+      <a href="{{ routes.search_url }}" class="header__icon" aria-label="{{ 'general.search.title' | t }}">
+        <svg class="icon icon-search" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+          <path d="M16 16L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </a>
+
+      <a href="{{ routes.account_url }}" class="header__icon" aria-label="{{ 'general.account.title' | t }}">
+        <svg class="icon icon-account" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+          <path d="M4 21C4 17.134 7.582 14 12 14C16.418 14 20 17.134 20 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </a>
+
+      <a href="{{ routes.cart_url }}" class="header__icon header__cart" aria-label="{{ 'general.cart.title' | t }}">
+        <svg class="icon icon-cart" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 2L3 6V20C3 20.5304 3.21071 21.0391 3.58579 21.4142C3.96086 21.7893 4.46957 22 5 22H19C19.5304 22 20.0391 21.7893 20.4142 21.4142C20.7893 21.0391 21 20.5304 21 20V6L18 2H6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 10C16 11.0609 15.5786 12.0783 14.8284 12.8284C14.0783 13.5786 13.0609 14 12 14C10.9391 14 9.92172 13.5786 9.17157 12.8284C8.42143 12.0783 8 11.0609 8 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="header__cart-count">{{ cart.item_count }}</span>
+      </a>
+
+      {%- comment -%} Mobile menu toggle {%- endcomment -%}
+      <button class="header__icon header__menu-toggle" aria-label="Menu" aria-expanded="false">
+        <svg class="icon icon-hamburger" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  {%- comment -%} Mobile menu {%- endcomment -%}
+  <div class="header__mobile-menu" id="MobileMenu" aria-hidden="true">
+    <ul class="header__mobile-menu-list list-unstyled" role="list">
+      {%- for link in section.settings.menu.links -%}
+        <li>
+          <a href="{{ link.url }}" class="header__mobile-menu-link">{{ link.title }}</a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "section-header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_header",
+      "label": "Enable sticky header",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

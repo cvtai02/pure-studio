@@ -1,0 +1,63 @@
+{%- comment -%}
+  Renders a product card
+
+  Accepts:
+  - product: {Object} Product Liquid object
+
+  Usage:
+  {% render 'product-card', product: product %}
+{%- endcomment -%}
+
+<div class="product-card">
+  <a href="{{ product.url }}" class="product-card__link">
+    <div class="product-card__image-wrapper">
+      {%- if product.featured_media -%}
+        <img
+          class="product-card__image"
+          src="{{ product.featured_media | image_url: width: 500 }}"
+          alt="{{ product.featured_media.alt | escape }}"
+          width="500"
+          height="{{ 500 | divided_by: product.featured_media.aspect_ratio | round }}"
+          loading="lazy"
+        >
+        {%- if product.media[1] != nil -%}
+          <img
+            class="product-card__image product-card__image--hover"
+            src="{{ product.media[1] | image_url: width: 500 }}"
+            alt="{{ product.media[1].alt | escape }}"
+            width="500"
+            height="{{ 500 | divided_by: product.media[1].aspect_ratio | round }}"
+            loading="lazy"
+          >
+        {%- endif -%}
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'product-card__placeholder' }}
+      {%- endif -%}
+
+      {%- if product.compare_at_price > product.price -%}
+        <span class="product-card__badge badge badge--sale">{{ 'products.product.on_sale' | t }}</span>
+      {%- endif -%}
+
+      {%- unless product.available -%}
+        <span class="product-card__badge badge badge--sold-out">{{ 'products.product.sold_out' | t }}</span>
+      {%- endunless -%}
+    </div>
+
+    <div class="product-card__info">
+      <h3 class="product-card__title">{{ product.title }}</h3>
+
+      {%- if product.vendor -%}
+        <p class="product-card__vendor">{{ product.vendor }}</p>
+      {%- endif -%}
+
+      <div class="product-card__price">
+        {%- if product.compare_at_price > product.price -%}
+          <span class="product-card__price--sale">{{ product.price | money }}</span>
+          <span class="product-card__price--compare">{{ product.compare_at_price | money }}</span>
+        {%- else -%}
+          <span class="product-card__price--regular">{{ product.price | money }}</span>
+        {%- endif -%}
+      </div>
+    </div>
+  </a>
+</div>

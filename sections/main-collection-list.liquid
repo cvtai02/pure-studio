@@ -1,0 +1,45 @@
+<section class="main-collection-list section-{{ section.id }}" data-section-id="{{ section.id }}">
+  <div class="page-width">
+    {%- if section.settings.heading != blank -%}
+      <h1 class="section-heading text-center">{{ section.settings.heading }}</h1>
+    {%- endif -%}
+
+    <div class="collection-list__grid grid grid--3">
+      {%- for collection in collections -%}
+        <div class="grid__item">
+          <a href="{{ collection.url }}" class="collection-card">
+            <div class="collection-card__image-wrapper">
+              {%- if collection.featured_image -%}
+                <img
+                  src="{{ collection.featured_image | image_url: width: 600 }}"
+                  alt="{{ collection.featured_image.alt | escape }}"
+                  width="600"
+                  height="{{ 600 | divided_by: collection.featured_image.aspect_ratio | round }}"
+                  loading="lazy"
+                >
+              {%- else -%}
+                {{ 'collection-1' | placeholder_svg_tag: 'collection-card__placeholder' }}
+              {%- endif -%}
+            </div>
+            <h2 class="collection-card__title h3">{{ collection.title }}</h2>
+          </a>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection list",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Collections"
+    }
+  ]
+}
+{% endschema %}

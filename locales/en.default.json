@@ -1,0 +1,69 @@
+{
+  "general": {
+    "search": {
+      "title": "Search",
+      "placeholder": "Search our store",
+      "submit": "Search",
+      "results_count": "{{ count }} results for \"{{ terms }}\"",
+      "no_results": "No results found for \"{{ terms }}\""
+    },
+    "cart": {
+      "title": "Cart",
+      "product": "Product",
+      "price": "Price",
+      "quantity": "Quantity",
+      "total": "Total",
+      "subtotal": "Subtotal",
+      "taxes_and_shipping": "Taxes and shipping calculated at checkout",
+      "checkout": "Check out",
+      "empty": "Your cart is empty",
+      "continue_shopping": "Continue shopping"
+    },
+    "account": {
+      "title": "Account"
+    },
+    "newsletter": {
+      "email_placeholder": "Enter your email",
+      "submit": "Subscribe",
+      "confirmation": "Thanks for subscribing!"
+    },
+    "footer": {
+      "powered_by": "Powered by Shopify"
+    },
+    "collection": {
+      "view_all": "View all"
+    },
+    "404": {
+      "title": "Page not found",
+      "subtext": "The page you requested does not exist.",
+      "link": "Continue shopping"
+    },
+    "onboarding": {
+      "product_title": "Example product title"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to cart",
+      "sold_out": "Sold out",
+      "on_sale": "Sale",
+      "quantity": "Quantity"
+    }
+  },
+  "blogs": {
+    "article": {
+      "read_more": "Read more",
+      "comments": "Comments",
+      "comment_under_moderation": "Your comment was submitted and will be published after review.",
+      "comment_posted": "Your comment has been posted.",
+      "name": "Name",
+      "email": "Email",
+      "message": "Comment",
+      "post_comment": "Post comment",
+      "back_to_blog": "Back to {{ title }}"
+    }
+  },
+  "accessibility": {
+    "skip_to_text": "Skip to content"
+  }
+}

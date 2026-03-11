@@ -1,0 +1,27 @@
+<section class="main-blog section-{{ section.id }}" data-section-id="{{ section.id }}">
+  <div class="page-width">
+    <h1 class="main-blog__heading section-heading">{{ blog.title }}</h1>
+
+    <div class="blog__grid grid grid--3">
+      {%- paginate blog.articles by 9 -%}
+        {%- for article in blog.articles -%}
+          <div class="grid__item">
+            {% render 'article-card', article: article %}
+          </div>
+        {%- endfor -%}
+
+        {%- if paginate.pages > 1 -%}
+          {% render 'pagination', paginate: paginate %}
+        {%- endif -%}
+      {%- endpaginate -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog posts",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}
