@@ -3,38 +3,74 @@
     "image-banner": {
       "type": "image-banner",
       "settings": {
-        "heading": "Welcome to {{ shop.name }}",
-        "subheading": "Discover our curated collection of premium products",
-        "button_label": "Shop now",
-        "button_link": "shopify://collections/all"
+        "heading": "Beyond Yesterday's Limits",
+        "subheading": "Performance gear designed for the adventures that push you and your best friend further.",
+        "button_label": "Shop the Collection",
+        "button_link": "shopify://collections/all",
+        "text_alignment": "left",
+        "overlay_opacity": 40
       }
     },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "heading": "Featured Collection",
-        "collection": ""
+        "heading": "What's Trending",
+        "products_to_show": 8,
+        "columns": 4,
+        "show_view_all": true
       }
     },
-    "rich-text": {
-      "type": "rich-text",
+    "category-explorer": {
+      "type": "category-explorer",
       "settings": {
-        "heading": "About our store",
-        "text": "<p>Share your brand story with customers. Describe a product, announce promotions, or welcome visitors to your store.</p>"
+        "heading": "Explore Categories"
+      }
+    },
+    "featured-collection-2": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Explore Specials",
+        "products_to_show": 8,
+        "columns": 4,
+        "show_view_all": true
+      }
+    },
+    "split-feature": {
+      "type": "split-feature",
+      "settings": {
+        "eyebrow": "Featured Collection",
+        "heading": "The Collection",
+        "text": "Lighter, stronger, faster. This collection represents the forefront of innovation, designed to take you further.",
+        "button_label": "Shop the Collection",
+        "content_style": "dark",
+        "reverse_layout": false
+      }
+    },
+    "feature-banner": {
+      "type": "feature-banner",
+      "settings": {
+        "eyebrow": "Featured Blog",
+        "heading": "About the Collection",
+        "text": "Lighter, stronger, faster. This collection represents the forefront of innovation, designed to take you and your adventures further.",
+        "button_label": "Learn More",
+        "min_height": 500
       }
     },
     "newsletter": {
       "type": "newsletter",
       "settings": {
-        "heading": "Subscribe to our emails",
-        "subheading": "Be the first to know about new collections and exclusive offers."
+        "heading": "Join The Pack",
+        "subheading": "Sign up for our newsletter and stay on track with the latest gear and exclusive offers."
       }
     }
   },
   "order": [
     "image-banner",
     "featured-collection",
-    "rich-text",
+    "category-explorer",
+    "featured-collection-2",
+    "split-feature",
+    "feature-banner",
     "newsletter"
   ]
 }

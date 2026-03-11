@@ -1,18 +1,18 @@
 {
   "current": {
-    "color_primary": "#1a1a2e",
-    "color_secondary": "#16213e",
-    "color_accent": "#e94560",
-    "color_text": "#1a1a2e",
-    "color_text_light": "#6c757d",
+    "color_primary": "#1a1a1a",
+    "color_secondary": "#2d2d2d",
+    "color_accent": "#c04030",
+    "color_text": "#1a1a1a",
+    "color_text_light": "#717171",
     "color_background": "#ffffff",
-    "color_background_secondary": "#f8f9fa",
+    "color_background_secondary": "#f5f5f5",
     "type_body_font_size": 16,
     "type_header_font_size_scale": 100,
-    "page_width": 1200,
-    "section_spacing": 48,
-    "button_border_radius": 4,
-    "button_color": "#1a1a2e",
+    "page_width": 1400,
+    "section_spacing": 60,
+    "button_border_radius": 0,
+    "button_color": "#1a1a1a",
     "button_text_color": "#ffffff",
     "social_facebook_link": "",
     "social_instagram_link": "",
@@ -23,11 +23,43 @@
     "sections": {
       "header": {
         "type": "header",
-        "settings": {}
+        "settings": {
+          "sticky_header": true,
+          "transparent_header": false,
+          "announcement_text": "Free shipping on orders over $75 — Shop New Arrivals"
+        }
       },
       "footer": {
         "type": "footer",
-        "settings": {}
+        "settings": {},
+        "blocks": {
+          "menu_1": {
+            "type": "menu",
+            "settings": {
+              "heading": "Learn More"
+            }
+          },
+          "menu_2": {
+            "type": "menu",
+            "settings": {
+              "heading": "Support"
+            }
+          },
+          "social": {
+            "type": "social",
+            "settings": {
+              "heading": "Follow Us"
+            }
+          },
+          "newsletter_block": {
+            "type": "newsletter",
+            "settings": {
+              "heading": "Stay Connected",
+              "text": "Subscribe for updates on new gear and exclusive deals."
+            }
+          }
+        },
+        "block_order": ["menu_1", "menu_2", "social", "newsletter_block"]
       }
     },
     "content_for_index": []

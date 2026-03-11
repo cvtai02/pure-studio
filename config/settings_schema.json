@@ -18,19 +18,19 @@
         "type": "color",
         "id": "color_primary",
         "label": "Primary",
-        "default": "#1a1a2e"
+        "default": "#1a1a1a"
       },
       {
         "type": "color",
         "id": "color_secondary",
         "label": "Secondary",
-        "default": "#16213e"
+        "default": "#2d2d2d"
       },
       {
         "type": "color",
         "id": "color_accent",
         "label": "Accent",
-        "default": "#e94560"
+        "default": "#c04030"
       },
       {
         "type": "header",
@@ -40,13 +40,13 @@
         "type": "color",
         "id": "color_text",
         "label": "Text",
-        "default": "#1a1a2e"
+        "default": "#1a1a1a"
       },
       {
         "type": "color",
         "id": "color_text_light",
         "label": "Light text",
-        "default": "#6c757d"
+        "default": "#717171"
       },
       {
         "type": "header",
@@ -62,7 +62,7 @@
         "type": "color",
         "id": "color_background_secondary",
         "label": "Secondary background",
-        "default": "#f8f9fa"
+        "default": "#f5f5f5"
       }
     ]
   },
@@ -114,7 +114,7 @@
         "max": 1600,
         "step": 100,
         "unit": "px",
-        "default": 1200
+        "default": 1400
       },
       {
         "type": "range",
@@ -124,7 +124,7 @@
         "max": 100,
         "step": 4,
         "unit": "px",
-        "default": 48
+        "default": 60
       }
     ]
   },
@@ -139,13 +139,13 @@
         "max": 40,
         "step": 2,
         "unit": "px",
-        "default": 4
+        "default": 0
       },
       {
         "type": "color",
         "id": "button_color",
         "label": "Button color",
-        "default": "#1a1a2e"
+        "default": "#1a1a1a"
       },
       {
         "type": "color",

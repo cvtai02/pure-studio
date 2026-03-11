@@ -11,17 +11,18 @@
             <div class="collection-card__image-wrapper">
               {%- if collection.featured_image -%}
                 <img
-                  src="{{ collection.featured_image | image_url: width: 600 }}"
+                  src="{{ collection.featured_image | image_url: width: 800 }}"
                   alt="{{ collection.featured_image.alt | escape }}"
-                  width="600"
-                  height="{{ 600 | divided_by: collection.featured_image.aspect_ratio | round }}"
+                  width="800"
+                  height="{{ 800 | divided_by: collection.featured_image.aspect_ratio | round }}"
                   loading="lazy"
                 >
               {%- else -%}
                 {{ 'collection-1' | placeholder_svg_tag: 'collection-card__placeholder' }}
               {%- endif -%}
+              <div class="collection-card__overlay"></div>
+              <h2 class="collection-card__title h3">{{ collection.title }}</h2>
             </div>
-            <h2 class="collection-card__title h3">{{ collection.title }}</h2>
           </a>
         </div>
       {%- endfor -%}

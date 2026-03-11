@@ -1,10 +1,35 @@
 <section class="main-collection section-{{ section.id }}" data-section-id="{{ section.id }}">
-  <div class="page-width">
-    <h1 class="main-collection__heading section-heading">{{ collection.title }}</h1>
+  {%- if collection.image -%}
+    <div class="collection__banner">
+      <img
+        class="collection__banner-image"
+        src="{{ collection.image | image_url: width: 1920 }}"
+        alt="{{ collection.image.alt | escape }}"
+        width="1920"
+        height="{{ 1920 | divided_by: collection.image.aspect_ratio | round }}"
+        loading="eager"
+      >
+      <div class="collection__banner-overlay"></div>
+      <div class="collection__banner-content page-width">
+        <h1 class="collection__banner-heading h1">{{ collection.title }}</h1>
+        {%- if collection.description != blank -%}
+          <p class="collection__banner-desc">{{ collection.description | strip_html | truncatewords: 30 }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- else -%}
+    <div class="page-width">
+      <h1 class="main-collection__heading section-heading">{{ collection.title }}</h1>
+      {%- if collection.description != blank -%}
+        <div class="main-collection__description rte">{{ collection.description }}</div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
 
-    {%- if collection.description != blank -%}
-      <div class="main-collection__description rte">{{ collection.description }}</div>
-    {%- endif -%}
+  <div class="page-width">
+    <div class="collection__toolbar">
+      <p class="collection__count">{{ collection.products_count }} {{ collection.products_count | pluralize: 'product', 'products' }}</p>
+    </div>
 
     {%- paginate collection.products by section.settings.products_per_page -%}
       <div class="main-collection__grid grid grid--{{ section.settings.columns }}">

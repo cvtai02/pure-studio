@@ -1,5 +1,20 @@
-<section class="rich-text section-{{ section.id }}" data-section-id="{{ section.id }}">
+<section class="rich-text section-{{ section.id }}{% if section.settings.background_image != blank %} section-rich-text--has-bg{% endif %}" data-section-id="{{ section.id }}">
+  {%- if section.settings.background_image != blank -%}
+    <img
+      class="rich-text__bg-image"
+      src="{{ section.settings.background_image | image_url: width: 1920 }}"
+      alt="{{ section.settings.heading | escape }}"
+      width="1920"
+      height="{{ 1920 | divided_by: section.settings.background_image.aspect_ratio | round }}"
+      loading="lazy"
+    >
+    <div class="rich-text__bg-overlay"></div>
+  {%- endif -%}
+
   <div class="page-width rich-text__wrapper text-{{ section.settings.text_alignment }}">
+    {%- if section.settings.eyebrow != blank -%}
+      <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem;{% if section.settings.background_image != blank %} color: rgba(255,255,255,0.7);{% else %} color: var(--color-accent);{% endif %}">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
     {%- if section.settings.heading != blank -%}
       <h2 class="rich-text__heading section-heading">{{ section.settings.heading }}</h2>
     {%- endif -%}
@@ -7,8 +22,11 @@
       <div class="rich-text__text rte">{{ section.settings.text }}</div>
     {%- endif -%}
     {%- if section.settings.button_label != blank -%}
-      <a href="{{ section.settings.button_link }}" class="button button--primary">
+      <a href="{{ section.settings.button_link }}" class="button {% if section.settings.background_image != blank %}button--white{% else %}button--primary{% endif %}">
         {{ section.settings.button_label | escape }}
+        <svg class="button__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </a>
     {%- endif -%}
   </div>
@@ -20,6 +38,12 @@
   "tag": "section",
   "class": "section-rich-text",
   "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "info": "Small text above the heading"
+    },
     {
       "type": "text",
       "id": "heading",
@@ -52,6 +76,12 @@
         { "value": "right", "label": "Right" }
       ],
       "default": "center"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image",
+      "info": "Makes the section full-width with a background image"
     }
   ],
   "presets": [

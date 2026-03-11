@@ -1,10 +1,11 @@
 <section class="main-404 section-{{ section.id }}" data-section-id="{{ section.id }}">
   <div class="page-width text-center">
+    <p class="main-404__eyebrow eyebrow-text">Page not found</p>
     <h1 class="main-404__heading h0">404</h1>
-    <p class="main-404__text">{{ 'general.404.title' | t }}</p>
-    <p>{{ 'general.404.subtext' | t }}</p>
-    <a href="{{ routes.root_url }}" class="button button--primary">
+    <p class="main-404__text">{{ 'general.404.subtext' | t }}</p>
+    <a href="{{ routes.root_url }}" class="button button--primary button--large">
       {{ 'general.404.link' | t }}
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.333 8h9.334M8.667 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
   </div>
 </section>

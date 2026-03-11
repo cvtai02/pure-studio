@@ -1,15 +1,26 @@
 <section class="main-product section-{{ section.id }}" data-section-id="{{ section.id }}">
   <div class="page-width">
+    {%- comment -%} Breadcrumb {%- endcomment -%}
+    <nav class="product__breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ routes.root_url }}">Home</a>
+      {%- if collection -%}
+        <span class="product__breadcrumb-sep">/</span>
+        <a href="{{ collection.url }}">{{ collection.title }}</a>
+      {%- endif -%}
+      <span class="product__breadcrumb-sep">/</span>
+      <span aria-current="page">{{ product.title }}</span>
+    </nav>
+
     <div class="product__wrapper grid grid--2">
       {%- comment -%} Product Media {%- endcomment -%}
       <div class="product__media-wrapper">
         {%- if product.featured_media -%}
-          <div class="product__media-main">
+          <div class="product__media-main" id="ProductMainMedia-{{ section.id }}">
             <img
-              src="{{ product.featured_media | image_url: width: 800 }}"
+              src="{{ product.featured_media | image_url: width: 900 }}"
               alt="{{ product.featured_media.alt | escape }}"
-              width="800"
-              height="{{ 800 | divided_by: product.featured_media.aspect_ratio | round }}"
+              width="900"
+              height="{{ 900 | divided_by: product.featured_media.aspect_ratio | round }}"
               loading="eager"
             >
           </div>
@@ -21,6 +32,8 @@
               <button
                 class="product__thumbnail{% if forloop.first %} product__thumbnail--active{% endif %}"
                 data-media-id="{{ media.id }}"
+                data-media-src="{{ media | image_url: width: 900 }}"
+                data-media-alt="{{ media.alt | escape }}"
                 aria-label="Load image {{ forloop.index }}"
               >
                 <img
@@ -38,13 +51,18 @@
 
       {%- comment -%} Product Info {%- endcomment -%}
       <div class="product__info-wrapper">
+        {%- if section.settings.show_vendor and product.vendor -%}
+          <p class="product__vendor eyebrow-text">{{ product.vendor }}</p>
+        {%- endif -%}
+
         <h1 class="product__title h2">{{ product.title }}</h1>
 
         <div class="product__price">
           {%- if product.compare_at_price > product.price -%}
             <span class="product__price--sale">{{ product.price | money }}</span>
             <span class="product__price--compare">{{ product.compare_at_price | money }}</span>
-            <span class="product__badge badge badge--sale">{{ 'products.product.on_sale' | t }}</span>
+            {%- assign savings = product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price -%}
+            <span class="product__badge badge badge--sale">Save {{ savings }}%</span>
           {%- else -%}
             <span class="product__price--regular">{{ product.price | money }}</span>
           {%- endif -%}
@@ -57,7 +75,7 @@
             {%- for option in product.options_with_values -%}
               <div class="product__option">
                 <label class="product__option-label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-                  {{ option.name }}
+                  {{ option.name }}: <span class="product__option-selected">{{ option.selected_value }}</span>
                 </label>
                 <select
                   id="Option-{{ section.id }}-{{ forloop.index0 }}"
@@ -80,14 +98,18 @@
               <label class="product__quantity-label" for="Quantity-{{ section.id }}">
                 {{ 'products.product.quantity' | t }}
               </label>
-              <input
-                type="number"
-                id="Quantity-{{ section.id }}"
-                class="product__quantity-input field__input"
-                name="quantity"
-                value="1"
-                min="1"
-              >
+              <div class="product__quantity-selector">
+                <button type="button" class="product__quantity-btn" data-action="decrease" aria-label="Decrease quantity">−</button>
+                <input
+                  type="number"
+                  id="Quantity-{{ section.id }}"
+                  class="product__quantity-input field__input"
+                  name="quantity"
+                  value="1"
+                  min="1"
+                >
+                <button type="button" class="product__quantity-btn" data-action="increase" aria-label="Increase quantity">+</button>
+              </div>
             </div>
 
             <button type="submit" class="button button--primary product__submit" {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}>
@@ -105,9 +127,29 @@
         {%- endif -%}
 
         {%- if product.description != blank -%}
-          <div class="product__description rte">
-            {{ product.description }}
-          </div>
+          <details class="product__accordion" open>
+            <summary class="product__accordion-header">
+              <span>Description</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 4.5L7 10.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="product__accordion-content rte">
+              {{ product.description }}
+            </div>
+          </details>
+        {%- endif -%}
+
+        {%- if section.settings.show_share_button -%}
+          <details class="product__accordion">
+            <summary class="product__accordion-header">
+              <span>Share</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 4.5L7 10.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </summary>
+            <div class="product__accordion-content">
+              <button class="product__share-btn" data-share-url="{{ product.url | prepend: request.origin }}" type="button">
+                Copy link
+              </button>
+            </div>
+          </details>
         {%- endif -%}
       </div>
     </div>
@@ -124,7 +166,7 @@
       "type": "checkbox",
       "id": "show_vendor",
       "label": "Show vendor",
-      "default": true
+      "default": false
     },
     {
       "type": "checkbox",

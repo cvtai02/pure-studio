@@ -1,5 +1,5 @@
 {%- comment -%}
-  Renders a product card
+  Renders a product card (Ruffwear-inspired)
 
   Accepts:
   - product: {Object} Product Liquid object
@@ -14,19 +14,19 @@
       {%- if product.featured_media -%}
         <img
           class="product-card__image"
-          src="{{ product.featured_media | image_url: width: 500 }}"
+          src="{{ product.featured_media | image_url: width: 600 }}"
           alt="{{ product.featured_media.alt | escape }}"
-          width="500"
-          height="{{ 500 | divided_by: product.featured_media.aspect_ratio | round }}"
+          width="600"
+          height="{{ 600 | divided_by: product.featured_media.aspect_ratio | round }}"
           loading="lazy"
         >
         {%- if product.media[1] != nil -%}
           <img
             class="product-card__image product-card__image--hover"
-            src="{{ product.media[1] | image_url: width: 500 }}"
+            src="{{ product.media[1] | image_url: width: 600 }}"
             alt="{{ product.media[1].alt | escape }}"
-            width="500"
-            height="{{ 500 | divided_by: product.media[1].aspect_ratio | round }}"
+            width="600"
+            height="{{ 600 | divided_by: product.media[1].aspect_ratio | round }}"
             loading="lazy"
           >
         {%- endif -%}
@@ -35,7 +35,12 @@
       {%- endif -%}
 
       {%- if product.compare_at_price > product.price -%}
-        <span class="product-card__badge badge badge--sale">{{ 'products.product.on_sale' | t }}</span>
+        {%- assign savings = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
+        <span class="product-card__badge badge badge--sale">{{ savings }}% off</span>
+      {%- elsif product.tags contains 'new' -%}
+        <span class="product-card__badge badge badge--new">New</span>
+      {%- elsif product.tags contains 'top-seller' or product.tags contains 'bestseller' -%}
+        <span class="product-card__badge badge badge--top-seller">Top Seller</span>
       {%- endif -%}
 
       {%- unless product.available -%}
@@ -46,8 +51,10 @@
     <div class="product-card__info">
       <h3 class="product-card__title">{{ product.title }}</h3>
 
-      {%- if product.vendor -%}
-        <p class="product-card__vendor">{{ product.vendor }}</p>
+      {%- if product.metafields.descriptors.subtitle != blank -%}
+        <p class="product-card__subtitle">{{ product.metafields.descriptors.subtitle.value }}</p>
+      {%- elsif product.description != blank -%}
+        <p class="product-card__subtitle">{{ product.description | strip_html | truncatewords: 8 }}</p>
       {%- endif -%}
 
       <div class="product-card__price">
