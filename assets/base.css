@@ -1347,6 +1347,8 @@ select.field__input {
 }
 
 .product__media-wrapper {
+  min-width: 0;
+  overflow: hidden;
 }
 
 .product__media-main {
@@ -1417,6 +1419,8 @@ select.field__input {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .product__thumbs-arrow {
