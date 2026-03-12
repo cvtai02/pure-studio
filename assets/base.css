@@ -663,7 +663,7 @@ select.field__input {
 .image-banner__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%);
+  background: linear-gradient(to left, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%);
   pointer-events: none;
 }
 
@@ -673,15 +673,18 @@ select.field__input {
   z-index: 2;
   display: flex;
   align-items: center;
-  padding: 6rem 0;
+  justify-content: flex-end;
+  padding: 4rem 5%;
 }
 
 .image-banner__text-wrapper {
-  max-width: 800px;
+  max-width: 520px;
+  text-align: right;
 }
 
 .image-banner__text-wrapper.text-center {
   margin: 0 auto;
+  text-align: center;
 }
 
 .image-banner__heading {
@@ -706,6 +709,7 @@ select.field__input {
 .image-banner__text-wrapper.text-center .image-banner__subheading {
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 .image-banner__button {
