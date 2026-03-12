@@ -25,6 +25,10 @@
     },
     "featured-collection": {
       "type": "featured-collection",
+      "custom_css": [
+        ".product-card-wrapper .card__content {position: relative;}",
+        ".product-card-wrapper .card__information > * {display: inline-block; margin-right: 1rem; vertical-align: middle;}"
+      ],
       "settings": {
         "heading": "Dog Clothes Trending",
         "collection": "womens",
