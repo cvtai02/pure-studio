@@ -842,13 +842,13 @@ select.field__input {
 @media (max-width: 990px) {
   .carousel__slide {
     flex: 0 0 calc(33.333% - 0.833rem);
-    min-width: 220px;
+    min-width: 180px;
   }
 }
 
 @media (max-width: 749px) {
   .carousel__slide {
-    flex: 0 0 75%;
+    flex: 0 0 48%;
     min-width: 0;
   }
 }
@@ -1066,6 +1066,36 @@ select.field__input {
   text-decoration: line-through;
   color: var(--color-text-light);
   font-size: 0.8125rem;
+}
+
+@media (max-width: 990px) {
+  .product-card__info {
+    padding: 0.75rem 0.625rem 0.75rem;
+  }
+
+  .product-card__title {
+    font-size: 0.8125rem;
+  }
+
+  .product-card__price--regular,
+  .product-card__price--sale {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 749px) {
+  .product-card__info {
+    padding: 0.5rem 0.5rem 0.625rem;
+  }
+
+  .product-card__title {
+    font-size: 0.75rem;
+  }
+
+  .product-card__price--regular,
+  .product-card__price--sale {
+    font-size: 0.75rem;
+  }
 }
 
 /* Product Card Color Swatches */
