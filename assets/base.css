@@ -1347,8 +1347,6 @@ select.field__input {
 }
 
 .product__media-wrapper {
-  position: sticky;
-  top: 2rem;
 }
 
 .product__media-main {
