@@ -26,7 +26,18 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "heading": "What's Trending",
+        "heading": "Dog Clothes Trending",
+        "collection": "",
+        "products_to_show": 8,
+        "columns": 4,
+        "show_view_all": true,
+        "menu": ""
+      }
+    },
+    "featured_collection_YAPL9E": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Cat Clothes Trending",
         "collection": "",
         "products_to_show": 8,
         "columns": 4,
@@ -97,6 +108,7 @@
   "order": [
     "image-banner",
     "featured-collection",
+    "featured_collection_YAPL9E",
     "category-explorer",
     "featured-collection-2",
     "split-feature",
