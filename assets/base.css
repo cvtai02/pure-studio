@@ -1357,6 +1357,23 @@ select.field__input {
   margin-bottom: 1rem;
 }
 
+.product__slider-track {
+  display: flex;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.product__slide {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.product__slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .product__media-arrow {
   position: absolute;
   top: 50%;
