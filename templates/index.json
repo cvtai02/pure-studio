@@ -43,7 +43,7 @@
       "type": "featured-collection",
       "settings": {
         "heading": "Cat Clothes Trending",
-        "collection": "",
+        "collection": "jewelry",
         "products_to_show": 8,
         "columns": 4,
         "show_view_all": true,
