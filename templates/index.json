@@ -64,24 +64,14 @@
     "split-feature": {
       "type": "split-feature",
       "settings": {
+        "image": "shopify://shop_images/Cat_Shopping_List.jpg",
         "eyebrow": "Featured Collection",
         "heading": "The Collection",
-        "text": "Lighter, stronger, faster. This collection represents the forefront of innovation, designed to take you further.",
+        "text": "",
         "button_label": "Shop the Collection",
         "button_link": "",
         "content_style": "dark",
         "reverse_layout": false
-      }
-    },
-    "feature-banner": {
-      "type": "feature-banner",
-      "settings": {
-        "min_height": 500,
-        "eyebrow": "Featured Blog",
-        "heading": "About the Collection",
-        "text": "Lighter, stronger, faster. This collection represents the forefront of innovation, designed to take you and your adventures further.",
-        "button_label": "Learn More",
-        "button_link": ""
       }
     },
     "newsletter": {
@@ -98,7 +88,6 @@
     "featured_collection_YAPL9E",
     "featured-collection-2",
     "split-feature",
-    "feature-banner",
     "newsletter"
   ]
 }
