@@ -1451,10 +1451,16 @@ select.field__input {
 .product__media-thumbnails {
   display: flex;
   gap: 0.5rem;
-  overflow: hidden;
+  overflow-x: auto;
   scroll-behavior: smooth;
   flex: 1;
   min-width: 0;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.product__media-thumbnails::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
 
 .product__thumbnail {

@@ -130,7 +130,7 @@
     var thumbWidth = 80 + 8; // thumbnail width + gap (0.5rem ~8px)
 
     function scrollThumbs(dir) {
-      thumbsStrip.scrollLeft += dir * thumbWidth * 2;
+      thumbsStrip.scrollBy({ left: dir * thumbWidth * 2, behavior: 'smooth' });
     }
 
     function updateThumbArrows() {
@@ -138,8 +138,8 @@
       if (thumbsNext) thumbsNext.disabled = thumbsStrip.scrollLeft + thumbsStrip.clientWidth >= thumbsStrip.scrollWidth - 1;
     }
 
-    if (thumbsPrev) thumbsPrev.addEventListener('click', function () { scrollThumbs(-1); });
-    if (thumbsNext) thumbsNext.addEventListener('click', function () { scrollThumbs(1); });
+    if (thumbsPrev) thumbsPrev.addEventListener('click', function () { scrollThumbs(-1); setTimeout(updateThumbArrows, 350); });
+    if (thumbsNext) thumbsNext.addEventListener('click', function () { scrollThumbs(1); setTimeout(updateThumbArrows, 350); });
     thumbsStrip.addEventListener('scroll', updateThumbArrows, { passive: true });
     updateThumbArrows();
 
