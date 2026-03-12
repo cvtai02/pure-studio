@@ -386,7 +386,7 @@ select.field__input {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: var(--color-background);
+  background-color: #ffffff;
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
@@ -462,7 +462,7 @@ select.field__input {
   align-items: center;
   gap: 0.3rem;
   color: var(--color-text);
-  font-size: 0.8125rem;
+  font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -1676,7 +1676,7 @@ select.field__input {
 }
 
 .product__description-title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 800;
   margin-bottom: 1.25rem;
 }
