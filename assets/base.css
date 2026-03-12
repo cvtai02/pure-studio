@@ -632,24 +632,20 @@ select.field__input {
 .image-banner__wrapper {
   position: relative;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
-  min-height: 100vh;
+  min-height: 300px; /* fallback when no image is set */
 }
 
-.image-banner__image,
+.image-banner__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+
 .image-banner__placeholder {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  object-fit: cover;
-}
-
-.image-banner__placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -670,8 +666,11 @@ select.field__input {
 }
 
 .image-banner__content {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 2;
+  display: flex;
+  align-items: center;
   padding: 6rem 0;
 }
 
@@ -721,10 +720,6 @@ select.field__input {
 }
 
 @media (max-width: 749px) {
-  .image-banner__wrapper {
-    min-height: 85vh;
-  }
-
   .image-banner__heading {
     font-size: calc(2.75rem * var(--font-heading-scale));
   }
@@ -1228,19 +1223,15 @@ select.field__input {
 .feature-banner {
   position: relative;
   width: 100%;
-  min-height: 500px;
-  display: flex;
-  align-items: center;
   overflow: hidden;
+  min-height: 300px; /* fallback when no image is set */
 }
 
 .feature-banner__bg {
-  position: absolute;
-  inset: 0;
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   max-width: none;
-  object-fit: cover;
 }
 
 .feature-banner__bg-placeholder {
@@ -1256,8 +1247,11 @@ select.field__input {
 }
 
 .feature-banner__content {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 2;
+  display: flex;
+  align-items: center;
   max-width: 600px;
   color: #fff;
 }
