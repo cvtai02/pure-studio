@@ -961,7 +961,7 @@ select.field__input {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  background: var(--color-background);
+  background: #ffffff;
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
