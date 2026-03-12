@@ -92,7 +92,8 @@
     if (index < 0) index = slides.length - 1;
     if (index >= slides.length) index = 0;
     currentSlideIndex = index;
-    sliderTrack.style.transform = 'translateX(-' + (currentSlideIndex * 100) + '%)';
+    var slideWidth = sliderTrack.offsetWidth;
+    sliderTrack.scrollTo({ left: currentSlideIndex * slideWidth, behavior: 'smooth' });
     thumbnails.forEach(function (t) { t.classList.remove('product__thumbnail--active'); });
     if (thumbnails[currentSlideIndex]) thumbnails[currentSlideIndex].classList.add('product__thumbnail--active');
   }
