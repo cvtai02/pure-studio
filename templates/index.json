@@ -33,7 +33,7 @@
       "name": "Dog",
       "settings": {
         "heading": "Dog Clothes Trending",
-        "collection": "womens",
+        "collection": "dog-clothes",
         "products_to_show": 8,
         "columns": 4,
         "show_view_all": true,
