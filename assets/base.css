@@ -632,15 +632,17 @@ select.field__input {
 .image-banner__wrapper {
   position: relative;
   width: 100%;
+  aspect-ratio: 21 / 9;
   overflow: hidden;
-  min-height: 300px; /* fallback when no image is set */
 }
 
 .image-banner__image {
-  display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: none;
+  object-fit: cover;
 }
 
 .image-banner__placeholder {
@@ -719,7 +721,17 @@ select.field__input {
   color: #fff;
 }
 
+@media (max-width: 989px) {
+  .image-banner__wrapper {
+    aspect-ratio: 16 / 9;
+  }
+}
+
 @media (max-width: 749px) {
+  .image-banner__wrapper {
+    aspect-ratio: 4 / 3;
+  }
+
   .image-banner__heading {
     font-size: calc(2.75rem * var(--font-heading-scale));
   }
@@ -1223,15 +1235,17 @@ select.field__input {
 .feature-banner {
   position: relative;
   width: 100%;
+  aspect-ratio: 21 / 9;
   overflow: hidden;
-  min-height: 300px; /* fallback when no image is set */
 }
 
 .feature-banner__bg {
-  display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-width: none;
+  object-fit: cover;
 }
 
 .feature-banner__bg-placeholder {
@@ -1274,6 +1288,18 @@ select.field__input {
   line-height: 1.7;
   margin-bottom: 2rem;
   opacity: 0.85;
+}
+
+@media (max-width: 989px) {
+  .feature-banner {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 749px) {
+  .feature-banner {
+    aspect-ratio: 4 / 3;
+  }
 }
 
 /* ============================================
