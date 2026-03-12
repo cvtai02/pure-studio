@@ -1413,10 +1413,47 @@ select.field__input {
   color: var(--color-text);
 }
 
+.product__thumbnails-slider {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.product__thumbs-arrow {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--color-background-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.product__thumbs-arrow:hover {
+  background: var(--color-primary);
+  color: var(--color-primary-contrast, #fff);
+}
+
+.product__thumbs-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.product__thumbs-arrow svg {
+  pointer-events: none;
+}
+
 .product__media-thumbnails {
   display: flex;
   gap: 0.5rem;
-  flex-wrap: wrap;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  flex: 1;
 }
 
 .product__thumbnail {

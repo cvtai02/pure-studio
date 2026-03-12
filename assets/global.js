@@ -120,6 +120,41 @@
   }
 
   /* ----------------------------------------
+     Thumbnail Strip Slider
+  ---------------------------------------- */
+  var thumbsStrip = document.querySelector('.product__media-thumbnails');
+  var thumbsPrev = document.querySelector('.product__thumbs-arrow--prev');
+  var thumbsNext = document.querySelector('.product__thumbs-arrow--next');
+
+  if (thumbsStrip && (thumbsPrev || thumbsNext)) {
+    var thumbWidth = 80 + 8; // thumbnail width + gap (0.5rem ~8px)
+
+    function scrollThumbs(dir) {
+      thumbsStrip.scrollLeft += dir * thumbWidth * 2;
+    }
+
+    function updateThumbArrows() {
+      if (thumbsPrev) thumbsPrev.disabled = thumbsStrip.scrollLeft <= 0;
+      if (thumbsNext) thumbsNext.disabled = thumbsStrip.scrollLeft + thumbsStrip.clientWidth >= thumbsStrip.scrollWidth - 1;
+    }
+
+    if (thumbsPrev) thumbsPrev.addEventListener('click', function () { scrollThumbs(-1); });
+    if (thumbsNext) thumbsNext.addEventListener('click', function () { scrollThumbs(1); });
+    thumbsStrip.addEventListener('scroll', updateThumbArrows, { passive: true });
+    updateThumbArrows();
+
+    // Keep active thumbnail visible when main slide changes
+    var originalGoToSlide = goToSlide;
+    goToSlide = function (index) {
+      originalGoToSlide(index);
+      var activeThumb = thumbnails[currentSlideIndex];
+      if (activeThumb) {
+        activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+      }
+    };
+  }
+
+  /* ----------------------------------------
      Product Quantity Buttons
   ---------------------------------------- */
   document.querySelectorAll('.product__quantity-btn').forEach(function (btn) {
