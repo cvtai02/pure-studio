@@ -12,7 +12,7 @@
     "image-banner": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify://shop_images/pet-banner-image_6f9e573b-3b7b-482e-9e3d-9714d89f6267.png",
+        "image": "shopify://shop_images/banner.jpg",
         "video_url": "",
         "banner_height": "600",
         "overlay_opacity": 40,
