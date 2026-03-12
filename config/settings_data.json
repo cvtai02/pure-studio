@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "color_primary": "#1a1a1a",
@@ -14,7 +23,8 @@
     "button_border_radius": 0,
     "button_color": "#1a1a1a",
     "button_text_color": "#ffffff",
-    "social_facebook_link": "",
+    "favicon": "shopify://shop_images/favicon.png",
+    "social_facebook_link": "https://www.facebook.com/cv.tai02",
     "social_instagram_link": "",
     "social_twitter_link": "",
     "social_youtube_link": "",
@@ -31,7 +41,6 @@
       },
       "footer": {
         "type": "footer",
-        "settings": {},
         "blocks": {
           "menu_1": {
             "type": "menu",
@@ -59,7 +68,13 @@
             }
           }
         },
-        "block_order": ["menu_1", "menu_2", "social", "newsletter_block"]
+        "block_order": [
+          "menu_1",
+          "menu_2",
+          "social",
+          "newsletter_block"
+        ],
+        "settings": {}
       }
     },
     "content_for_index": []
