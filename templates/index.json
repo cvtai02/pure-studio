@@ -27,10 +27,11 @@
       "type": "featured-collection",
       "settings": {
         "heading": "What's Trending",
-        "collection": "",
+        "collection": "womens",
         "products_to_show": 8,
         "columns": 4,
-        "show_view_all": true
+        "show_view_all": true,
+        "menu": ""
       }
     },
     "category-explorer": {
@@ -58,7 +59,8 @@
         "collection": "",
         "products_to_show": 8,
         "columns": 4,
-        "show_view_all": true
+        "show_view_all": true,
+        "menu": ""
       }
     },
     "split-feature": {
