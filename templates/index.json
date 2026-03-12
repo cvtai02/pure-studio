@@ -27,7 +27,7 @@
       "type": "featured-collection",
       "settings": {
         "heading": "What's Trending",
-        "collection": "womens",
+        "collection": "",
         "products_to_show": 8,
         "columns": 4,
         "show_view_all": true,
