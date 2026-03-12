@@ -1454,9 +1454,11 @@ select.field__input {
   overflow: hidden;
   scroll-behavior: smooth;
   flex: 1;
+  min-width: 0;
 }
 
 .product__thumbnail {
+  flex-shrink: 0;
   width: 80px;
   height: 80px;
   border: 2px solid transparent;
