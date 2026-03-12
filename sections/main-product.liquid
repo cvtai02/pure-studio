@@ -148,18 +148,6 @@
           </button>
         {%- endif -%}
 
-        {%- if product.description != blank -%}
-          <details class="product__accordion" open>
-            <summary class="product__accordion-header">
-              <span>Description</span>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 4.5L7 10.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </summary>
-            <div class="product__accordion-content rte">
-              {{ product.description }}
-            </div>
-          </details>
-        {%- endif -%}
-
         {%- if section.settings.show_share_button -%}
           <details class="product__accordion">
             <summary class="product__accordion-header">
@@ -175,6 +163,15 @@
         {%- endif -%}
       </div>
     </div>
+
+    {%- if product.description != blank -%}
+      <div class="product__description-full">
+        <h2 class="product__description-title">Description</h2>
+        <div class="product__description-content rte">
+          {{ product.description }}
+        </div>
+      </div>
+    {%- endif -%}
   </div>
 </section>
 

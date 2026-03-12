@@ -53,8 +53,6 @@
 
       {%- if product.metafields.descriptors.subtitle != blank -%}
         <p class="product-card__subtitle">{{ product.metafields.descriptors.subtitle.value }}</p>
-      {%- elsif product.description != blank -%}
-        <p class="product-card__subtitle">{{ product.description | strip_html | truncatewords: 8 }}</p>
       {%- endif -%}
 
       <div class="product-card__price">

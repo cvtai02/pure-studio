@@ -959,6 +959,16 @@ select.field__input {
    ============================================ */
 .product-card {
   position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--color-background);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
 }
 
 .product-card__link {
@@ -1009,7 +1019,7 @@ select.field__input {
 }
 
 .product-card__info {
-  padding: 1rem 0 0.5rem;
+  padding: 1rem 0.875rem 1rem;
 }
 
 .product-card__title {
@@ -1659,9 +1669,34 @@ select.field__input {
   padding: 0;
 }
 
+.product__description-full {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+.product__description-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+}
+
+.product__description-content {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-text);
+}
+
 @media (max-width: 749px) {
   .product__wrapper.grid--2 {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .product__media-arrow,
+  .carousel__btn {
+    display: none;
   }
 }
 
