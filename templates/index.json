@@ -30,6 +30,7 @@
         ".product-card-wrapper .card__content {position: relative;}",
         ".product-card-wrapper .card__information > * {display: inline-block; margin-right: 1rem; vertical-align: middle;}"
       ],
+      "name": "Dog",
       "settings": {
         "heading": "Dog Clothes Trending",
         "collection": "womens",
@@ -41,6 +42,7 @@
     },
     "featured_collection_YAPL9E": {
       "type": "featured-collection",
+      "name": "Cat",
       "settings": {
         "heading": "Cat Clothes Trending",
         "collection": "jewelry",
