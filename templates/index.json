@@ -50,24 +50,6 @@
         "menu": ""
       }
     },
-    "category-explorer": {
-      "type": "category-explorer",
-      "blocks": {
-        "category_ar4zF3": {
-          "type": "category",
-          "settings": {
-            "label": "Category",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "category_ar4zF3"
-      ],
-      "settings": {
-        "heading": "Explore Categories"
-      }
-    },
     "featured-collection-2": {
       "type": "featured-collection",
       "settings": {
@@ -114,7 +96,6 @@
     "image-banner",
     "featured-collection",
     "featured_collection_YAPL9E",
-    "category-explorer",
     "featured-collection-2",
     "split-feature",
     "feature-banner",
