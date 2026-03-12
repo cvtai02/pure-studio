@@ -57,7 +57,7 @@
       "name": "Specials",
       "settings": {
         "heading": "Explore Specials",
-        "collection": "fashion-accessories-1",
+        "collection": "dog-and-cat-collar",
         "products_to_show": 8,
         "columns": 4,
         "show_view_all": true,
