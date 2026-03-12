@@ -14,12 +14,12 @@
       "settings": {
         "image": "shopify://shop_images/banner.jpg",
         "video_url": "",
-        "banner_height": "600",
+        "banner_height": "450",
         "overlay_opacity": 40,
         "eyebrow": "",
-        "heading": "",
+        "heading": "The Pet Paradise",
         "subheading": "",
-        "button_label": "",
+        "button_label": "Shop",
         "button_link": "shopify://collections/all",
         "text_alignment": "left"
       }
