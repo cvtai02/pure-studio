@@ -14,7 +14,7 @@
       "settings": {
         "image": "shopify://shop_images/pet-banner-image_6f9e573b-3b7b-482e-9e3d-9714d89f6267.png",
         "video_url": "",
-        "banner_height": "100vh",
+        "banner_height": "600",
         "overlay_opacity": 40,
         "eyebrow": "",
         "heading": "",
