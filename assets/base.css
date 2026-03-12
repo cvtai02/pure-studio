@@ -718,6 +718,11 @@ select.field__input {
   border-color: #fff;
   padding: 1rem 2.5rem;
   font-size: 0.8125rem;
+  border-radius: 9999px;
+}
+
+.image-banner__button .button__arrow {
+  display: none;
 }
 
 .image-banner__button:hover {
