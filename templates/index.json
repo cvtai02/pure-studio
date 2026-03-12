@@ -45,7 +45,7 @@
       "name": "Cat",
       "settings": {
         "heading": "Cat Clothes Trending",
-        "collection": "jewelry",
+        "collection": "cat-clothes-trending",
         "products_to_show": 8,
         "columns": 4,
         "show_view_all": true,
