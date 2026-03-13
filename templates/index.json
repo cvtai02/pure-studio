@@ -24,6 +24,18 @@
         "text_alignment": "left"
       }
     },
+    "featured_collection_YAPL9E": {
+      "type": "featured-collection",
+      "name": "Cat",
+      "settings": {
+        "heading": "Cat Clothes Trending",
+        "collection": "cat-clothes-trending",
+        "products_to_show": 8,
+        "columns": 4,
+        "show_view_all": true,
+        "menu": ""
+      }
+    },
     "featured-collection": {
       "type": "featured-collection",
       "custom_css": [
@@ -34,18 +46,6 @@
       "settings": {
         "heading": "Dog Clothes Trending",
         "collection": "dog-clothes",
-        "products_to_show": 8,
-        "columns": 4,
-        "show_view_all": true,
-        "menu": ""
-      }
-    },
-    "featured_collection_YAPL9E": {
-      "type": "featured-collection",
-      "name": "Cat",
-      "settings": {
-        "heading": "Cat Clothes Trending",
-        "collection": "cat-clothes-trending",
         "products_to_show": 8,
         "columns": 4,
         "show_view_all": true,
@@ -87,8 +87,8 @@
   },
   "order": [
     "image-banner",
-    "featured-collection",
     "featured_collection_YAPL9E",
+    "featured-collection",
     "featured-collection-2",
     "split-feature",
     "newsletter"
