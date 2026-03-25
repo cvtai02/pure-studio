@@ -1,0 +1,191 @@
+<section class="section-promise section-promise--{{ section.settings.background }}" data-section-id="{{ section.id }}">
+  <div class="page-width">
+    <div class="promise__header text-center">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="promise__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="promise__heading section-heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="promise__subheading">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="promise__grid promise__grid--{{ section.blocks.size }}">
+      {%- for block in section.blocks -%}
+        <div class="promise__item" {{ block.shopify_attributes }}>
+          <div class="promise__icon-wrap">
+            {%- case block.settings.icon -%}
+              {%- when 'shield' -%}
+                <svg class="promise__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M24 4L8 10V24C8 33.6 15.2 42.4 24 44C32.8 42.4 40 33.6 40 24V10L24 4Z" fill="currentColor" opacity="0.12"/>
+                  <path d="M24 4L8 10V24C8 33.6 15.2 42.4 24 44C32.8 42.4 40 33.6 40 24V10L24 4Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <polyline points="17 24 22 29 31 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              {%- when 'heart' -%}
+                <svg class="promise__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M24 40C24 40 8 30 8 18C8 13.6 11.6 10 16 10C19.2 10 22 12 24 14C26 12 28.8 10 32 10C36.4 10 40 13.6 40 18C40 30 24 40 24 40Z" fill="currentColor" opacity="0.12"/>
+                  <path d="M24 40C24 40 8 30 8 18C8 13.6 11.6 10 16 10C19.2 10 22 12 24 14C26 12 28.8 10 32 10C36.4 10 40 13.6 40 18C40 30 24 40 24 40Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              {%- when 'certificate' -%}
+                <svg class="promise__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="6" y="6" width="36" height="26" rx="3" fill="currentColor" opacity="0.12"/>
+                  <rect x="6" y="6" width="36" height="26" rx="3" stroke="currentColor" stroke-width="2.5"/>
+                  <circle cx="24" cy="19" r="6" stroke="currentColor" stroke-width="2.5"/>
+                  <polyline points="20 18 23 21 29 15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M18 32L20 42L24 39L28 42L30 32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              {%- when 'return' -%}
+                <svg class="promise__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="24" cy="24" r="16" fill="currentColor" opacity="0.12"/>
+                  <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2.5"/>
+                  <polyline points="10 16 10 26 20 26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M10 26C12 18 18 12 26 12C32 12 37 16 38 22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              {%- when 'paw' -%}
+                <svg class="promise__icon" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <ellipse cx="10" cy="15" rx="5" ry="6.5" opacity="0.85"/>
+                  <ellipse cx="20" cy="9" rx="5" ry="6.5" opacity="0.85"/>
+                  <ellipse cx="30" cy="9" rx="5" ry="6.5" opacity="0.85"/>
+                  <ellipse cx="40" cy="15" rx="5" ry="6.5" opacity="0.85"/>
+                  <path d="M24 22C14 22 7 30 9 37C11 44 18 47 24 47C30 47 37 44 39 37C41 30 34 22 24 22Z"/>
+                </svg>
+              {%- when 'truck' -%}
+                <svg class="promise__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="4" y="14" width="26" height="20" rx="2" fill="currentColor" opacity="0.12"/>
+                  <rect x="4" y="14" width="26" height="20" rx="2" stroke="currentColor" stroke-width="2.5"/>
+                  <path d="M30 20H40L44 28V34H30V20Z" fill="currentColor" opacity="0.12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="12" cy="36" r="4" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="2.5"/>
+                  <circle cx="38" cy="36" r="4" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="2.5"/>
+                </svg>
+              {%- else -%}
+                <svg class="promise__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="24" cy="24" r="16" fill="currentColor" opacity="0.12" stroke="currentColor" stroke-width="2.5"/>
+                  <polyline points="16 24 22 30 34 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            {%- endcase -%}
+          </div>
+          {%- if block.settings.title != blank -%}
+            <h3 class="promise__title">{{ block.settings.title }}</h3>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+            <p class="promise__text">{{ block.settings.text }}</p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Promise",
+  "tag": "section",
+  "class": "section-promise",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Why PawSafe"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our Promise to You"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Every product we make starts and ends with one question: will this keep pets safer?"
+    },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Background",
+      "options": [
+        { "value": "white", "label": "White" },
+        { "value": "light", "label": "Light grey" },
+        { "value": "dark", "label": "Dark navy" }
+      ],
+      "default": "light"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pillar",
+      "name": "Promise pillar",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "shield", "label": "Shield" },
+            { "value": "heart", "label": "Heart" },
+            { "value": "certificate", "label": "Certificate / Lab" },
+            { "value": "return", "label": "Return / Guarantee" },
+            { "value": "paw", "label": "Paw print" },
+            { "value": "truck", "label": "Truck / Shipping" }
+          ],
+          "default": "shield"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Safety First"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Every product is crash-tested to exceed FMVSS 213 safety standards."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promise",
+      "blocks": [
+        {
+          "type": "pillar",
+          "settings": {
+            "icon": "shield",
+            "title": "Crash Tested",
+            "text": "Our products exceed FMVSS 213 safety standards — the same used for child car seats."
+          }
+        },
+        {
+          "type": "pillar",
+          "settings": {
+            "icon": "certificate",
+            "title": "Vet Approved",
+            "text": "Independently tested and recommended by veterinarians and animal safety experts."
+          }
+        },
+        {
+          "type": "pillar",
+          "settings": {
+            "icon": "heart",
+            "title": "Made with Love",
+            "text": "Designed by pet parents, for pet parents who refuse to compromise on safety."
+          }
+        },
+        {
+          "type": "pillar",
+          "settings": {
+            "icon": "return",
+            "title": "30-Day Guarantee",
+            "text": "Not satisfied? Return it, no questions asked. We stand behind every product."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

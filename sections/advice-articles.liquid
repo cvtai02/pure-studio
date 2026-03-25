@@ -1,0 +1,160 @@
+{%- assign blog_handle = section.settings.blog -%}
+{%- assign articles_count = section.settings.articles_count | default: 3 -%}
+
+<section class="section-advice-articles" data-section-id="{{ section.id }}">
+  <div class="page-width">
+    <div class="advice-articles__header">
+      <div class="advice-articles__heading-group">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="advice-articles__eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="advice-articles__heading section-heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.view_all_label != blank -%}
+        {%- assign view_all_url = '/blogs/news' -%}
+        {%- if blog_handle != blank -%}
+          {%- assign view_all_url = blogs[blog_handle].url -%}
+        {%- endif -%}
+        <a href="{{ view_all_url }}" class="advice-articles__view-all">
+          {{ section.settings.view_all_label }}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="advice-articles__grid">
+      {%- if blog_handle != blank and blogs[blog_handle] != blank and blogs[blog_handle].articles_count > 0 -%}
+        {%- for article in blogs[blog_handle].articles limit: articles_count -%}
+          <article class="advice-card">
+            <a href="{{ article.url }}" class="advice-card__link" aria-label="{{ article.title | escape }}">
+              <div class="advice-card__image-wrap">
+                {%- if article.image -%}
+                  <img
+                    src="{{ article.image | image_url: width: 640 }}"
+                    alt="{{ article.image.alt | default: article.title | escape }}"
+                    width="640"
+                    height="{{ 640 | divided_by: article.image.aspect_ratio | round }}"
+                    loading="lazy"
+                    class="advice-card__image"
+                  >
+                {%- else -%}
+                  <div class="advice-card__image-placeholder">
+                    {{ 'lifestyle-1' | placeholder_svg_tag: 'advice-card__placeholder-svg' }}
+                  </div>
+                {%- endif -%}
+                {%- if article.tags.size > 0 -%}
+                  <span class="advice-card__tag">{{ article.tags | first }}</span>
+                {%- endif -%}
+              </div>
+              <div class="advice-card__body">
+                <p class="advice-card__meta">
+                  <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: '%b %d, %Y' }}</time>
+                  {%- if article.author != blank -%}
+                    <span class="advice-card__meta-sep" aria-hidden="true">·</span>
+                    <span>{{ article.author }}</span>
+                  {%- endif -%}
+                </p>
+                <h3 class="advice-card__title">{{ article.title }}</h3>
+                {%- if article.excerpt != blank -%}
+                  <p class="advice-card__excerpt">{{ article.excerpt | strip_html | truncatewords: 18 }}</p>
+                {%- endif -%}
+                <span class="advice-card__read-more">
+                  Read article
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </article>
+        {%- endfor -%}
+      {%- else -%}
+        {%- comment -%} Placeholder cards for preview {%- endcomment -%}
+        {%- assign placeholder_tags = 'Safety Tips,Training,Pet Health' | split: ',' -%}
+        {%- assign placeholder_titles = 'How to Choose the Right Car Seat for Your Dog,5 Signs Your Pet Harness Fits Correctly,Crash Test Standards Explained: What Every Pet Parent Needs to Know' | split: ',' -%}
+        {%- assign placeholder_excerpts = 'Not all pet car seats are created equal. Here is what the safety labels actually mean and how to pick the best one for your dog size and breed.,A poorly fitted harness can be just as dangerous as wearing none at all. Learn the five-point fit check every owner should perform before each trip.,We break down FMVSS 213 and what it means for your pet so you can shop with confidence and make informed safety decisions.' | split: ',' -%}
+        {%- assign placeholder_images = 'lifestyle-1,lifestyle-2,product-1' | split: ',' -%}
+        {%- for i in (1..3) -%}
+          {%- assign idx = forloop.index0 -%}
+          <article class="advice-card">
+            <a href="#" class="advice-card__link">
+              <div class="advice-card__image-wrap">
+                <div class="advice-card__image-placeholder">
+                  {{ placeholder_images[idx] | placeholder_svg_tag: 'advice-card__placeholder-svg' }}
+                </div>
+                <span class="advice-card__tag">{{ placeholder_tags[idx] }}</span>
+              </div>
+              <div class="advice-card__body">
+                <p class="advice-card__meta">
+                  <time>Mar {{ forloop.index | times: 7 }}, 2026</time>
+                  <span class="advice-card__meta-sep" aria-hidden="true">·</span>
+                  <span>PawSafe Team</span>
+                </p>
+                <h3 class="advice-card__title">{{ placeholder_titles[idx] }}</h3>
+                <p class="advice-card__excerpt">{{ placeholder_excerpts[idx] | truncatewords: 18 }}</p>
+                <span class="advice-card__read-more">
+                  Read article
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </article>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Advice & Articles",
+  "tag": "section",
+  "class": "section-advice-articles",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "Expert Knowledge"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Advice & Articles"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog",
+      "info": "Select the blog to pull articles from"
+    },
+    {
+      "type": "range",
+      "id": "articles_count",
+      "label": "Number of articles",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "text",
+      "id": "view_all_label",
+      "label": "\"View All\" button label",
+      "default": "View all articles"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Advice & Articles"
+    }
+  ]
+}
+{% endschema %}

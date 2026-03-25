@@ -13,6 +13,43 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "brand_block": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "text": "<p>Keeping pets safe since 2015. Our mission is simple: protect every furry family member on every adventure.</p>",
+            "show_social": true
+          }
+        },
+        "shop_menu": {
+          "type": "menu",
+          "settings": {
+            "heading": "Shop",
+            "menu": "main-menu"
+          }
+        },
+        "help_menu": {
+          "type": "menu",
+          "settings": {
+            "heading": "Customer Care",
+            "menu": "footer"
+          }
+        },
+        "learn_menu": {
+          "type": "menu",
+          "settings": {
+            "heading": "Learn More",
+            "menu": "footer"
+          }
+        }
+      },
+      "block_order": [
+        "brand_block",
+        "shop_menu",
+        "help_menu",
+        "learn_menu"
+      ],
       "settings": {}
     }
   },
