@@ -12,7 +12,7 @@
     "image-banner": {
       "type": "image-banner",
       "settings": {
-        "image": "shopify://shop_images/banner.jpg",
+        "image": "shopify://shop_images/img-benefits-cat-tree-header.jpg",
         "video_url": "",
         "banner_height": "100vh",
         "overlay_opacity": 40,
@@ -21,7 +21,7 @@
         "subheading": "Crash-tested, certified safe, and trusted by 500,000+ pet parents worldwide.",
         "button_label": "Shop Safety Gear",
         "button_link": "shopify://collections/all",
-        "text_alignment": "left"
+        "text_alignment": "center"
       }
     },
     "featured-collection": {
