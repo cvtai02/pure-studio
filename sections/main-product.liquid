@@ -97,7 +97,7 @@
             {%- for option in product.options_with_values -%}
               <div class="product__option">
                 <label class="product__option-label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-                  {{ option.name }}: <span class="product__option-selected">{{ option.selected_value }}</span>
+                  {{ option.name }}
                 </label>
                 <select
                   id="Option-{{ section.id }}-{{ forloop.index0 }}"
