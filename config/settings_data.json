@@ -46,8 +46,7 @@
             "type": "text",
             "settings": {
               "heading": "",
-              "text": "Keeping pets safe since 2015. Our mission is simple: protect every furry family member on every adventure.",
-              "show_social": true
+              "text": "<p>Keeping pets safe since 2015. Our mission is simple: protect every furry family member on every adventure.</p>"
             }
           },
           "shop_menu": {
