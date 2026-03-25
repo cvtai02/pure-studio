@@ -33,14 +33,14 @@
           "type": "menu",
           "settings": {
             "heading": "Products",
-            "menu": "footer"
+            "menu": "footer-products"
           }
         },
         "learn_menu": {
           "type": "menu",
           "settings": {
             "heading": "Advices & Articles",
-            "menu": "footer"
+            "menu": "footer-advices-article"
           }
         },
         "social_bEzAx9": {
