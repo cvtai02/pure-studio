@@ -1,3 +1,17 @@
+/* Vertical divider between footer columns */
+.footer__grid > *:not(:first-child) {
+  position: relative;
+}
+.footer__grid > *:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  left: -1.25rem;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255,255,255,0.12);
+  display: block;
+}
 /* ============================================
    PureStudio Theme - Footer & Social Icons
    ============================================ */
@@ -13,7 +27,7 @@
 
 .footer__grid {
   display: grid;
-  grid-template-columns: 1.5fr repeat(3, 1fr);
+  grid-template-columns: 1.5fr repeat(4, 1fr);
   gap: 2.5rem;
   margin-bottom: 3rem;
 }
