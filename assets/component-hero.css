@@ -9,7 +9,6 @@
 .image-banner__wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 21 / 9;
   overflow: hidden;
 }
 
