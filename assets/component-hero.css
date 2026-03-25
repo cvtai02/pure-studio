@@ -118,7 +118,7 @@
 
 @media (max-width: 749px) {
   .image-banner__wrapper {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 2 / 3;
   }
 
   .image-banner__heading {
