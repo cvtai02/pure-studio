@@ -235,9 +235,16 @@
   background-color: var(--color-background);
 }
 
-.header__wrapper {
-  position: relative; /* important for absolute child */
+.header__wrapper { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding-top: 0.875rem; 
+  padding-bottom: 0.875rem; 
+  gap: 2rem; 
+  position: relative;
 }
+
 
 /* Center logo */
 .header__logo {
