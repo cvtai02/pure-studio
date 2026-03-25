@@ -1,8 +1,8 @@
-{%- if section.settings.collection != blank or section.settings.collection == blank -%}
-  <section class="featured-collection section-{{ section.id }}" data-section-id="{{ section.id }}">
-    <div class="page-width">
-      <div class="carousel" data-carousel>
-        <div class="carousel__header">
+{%- assign collection_obj = collections[section.settings.collection] -%}
+<section class="featured-collection section-{{ section.id }}" data-section-id="{{ section.id }}">
+  <div class="page-width">
+    <div class="carousel" data-carousel>
+      <div class="carousel__header">
           {%- if section.settings.heading != blank -%}
             <h2 class="carousel__heading section-heading">{{ section.settings.heading }}</h2>
           {%- endif -%}
@@ -31,12 +31,12 @@
           </button>
         </div>
 
-        {%- assign collection = section.settings.collection -%}
+
         {%- assign products_to_show = section.settings.products_to_show -%}
 
         <div class="carousel__track" data-carousel-track>
-          {%- if collection != blank -%}
-            {%- for product in collection.products limit: products_to_show -%}
+          {%- if collection_obj and collection_obj.products_count > 0 -%}
+            {%- for product in collection_obj.products limit: products_to_show -%}
               <div class="carousel__slide">
                 {% render 'product-card', product: product %}
               </div>
@@ -51,9 +51,9 @@
         </div>
       </div>
 
-      {%- if section.settings.show_view_all and collection != blank -%}
+      {%- if section.settings.show_view_all and collection_obj and collection_obj.products_count > 0 -%}
         <div class="featured-collection__view-all text-center">
-          <a href="{{ collection.url }}" class="button button--secondary">
+          <a href="{{ collection_obj.url }}" class="button button--secondary">
             {{ 'general.collection.view_all' | t }}
             <svg class="button__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -63,7 +63,6 @@
       {%- endif -%}
     </div>
   </section>
-{%- endif -%}
 
 {% schema %}
 {
