@@ -152,7 +152,7 @@
 .header__menu {
   display: flex;
   gap: 1.75rem;
-  justify-content: center;
+  justify-content: start;
 }
 
 .header__menu-item {
