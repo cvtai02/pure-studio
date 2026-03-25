@@ -62,12 +62,6 @@
                 {%- if article.excerpt != blank -%}
                   <p class="advice-card__excerpt">{{ article.excerpt | strip_html | truncatewords: 18 }}</p>
                 {%- endif -%}
-                <span class="advice-card__read-more">
-                  Read article
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
               </div>
             </a>
           </article>
@@ -96,12 +90,6 @@
                 </p>
                 <h3 class="advice-card__title">{{ placeholder_titles[idx] }}</h3>
                 <p class="advice-card__excerpt">{{ placeholder_excerpts[idx] | truncatewords: 18 }}</p>
-                <span class="advice-card__read-more">
-                  Read article
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
               </div>
             </a>
           </article>
