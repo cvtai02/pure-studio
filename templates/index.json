@@ -26,6 +26,7 @@
     },
     "featured-collection": {
       "type": "featured-collection",
+      "name": "Best Sellers",
       "settings": {
         "heading": "Our Best Sellers",
         "collection": "all",
