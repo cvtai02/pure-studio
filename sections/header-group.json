@@ -18,7 +18,7 @@
         "menu": "main-menu",
         "sticky_header": true,
         "transparent_header": false,
-        "announcement_text": "Free shipping on orders over $75 — Shop New Arrivals",
+        "announcement_text": "",
         "announcement_link": ""
       }
     }
