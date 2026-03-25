@@ -1,3 +1,23 @@
+/* Centered absolute logo in header */
+.header__logo--centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+@media (max-width: 990px) {
+  .header__logo--centered {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+}
 /* ============================================
    PureStudio Theme - Header & Announcement Bar
    ============================================ */
