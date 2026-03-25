@@ -19,10 +19,49 @@
         "eyebrow": "",
         "heading": "THE PET PARADISE",
         "subheading": "Everything your best friend deserves",
-        "button_label": "Shop now",
+        "button_label": "Shop Now",
         "button_link": "shopify://collections/all",
         "text_alignment": "left"
       }
+    },
+    "trust-badges": {
+      "type": "trust-badges",
+      "blocks": {
+        "badge_1": {
+          "type": "badge",
+          "settings": {
+            "icon": "shipping",
+            "title": "Free Shipping",
+            "text": "On orders over $50"
+          }
+        },
+        "badge_2": {
+          "type": "badge",
+          "settings": {
+            "icon": "shield",
+            "title": "Satisfaction Guaranteed",
+            "text": "30-day money back guarantee"
+          }
+        },
+        "badge_3": {
+          "type": "badge",
+          "settings": {
+            "icon": "paw",
+            "title": "Pet Safe Materials",
+            "text": "100% safe for your pets"
+          }
+        },
+        "badge_4": {
+          "type": "badge",
+          "settings": {
+            "icon": "heart",
+            "title": "24/7 Support",
+            "text": "We're here to help"
+          }
+        }
+      },
+      "block_order": ["badge_1", "badge_2", "badge_3", "badge_4"],
+      "settings": {}
     },
     "featured_collection_YAPL9E": {
       "type": "featured-collection",
@@ -77,6 +116,40 @@
         "reverse_layout": false
       }
     },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Sarah M.",
+            "text": "My dog absolutely loves the clothes from this store! Great quality and fast shipping. Will definitely order again.",
+            "rating": 5
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "author": "James K.",
+            "text": "The cat outfits are adorable and my cats actually don't mind wearing them. Perfect fit and premium materials.",
+            "rating": 5
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Emily R.",
+            "text": "Best pet store I've found online. Amazing customer service and the products are top-notch. My pets are living their best lives!",
+            "rating": 5
+          }
+        }
+      },
+      "block_order": ["testimonial_1", "testimonial_2", "testimonial_3"],
+      "settings": {
+        "heading": "What Pet Parents Say",
+        "subheading": "Join thousands of happy pet owners who trust us"
+      }
+    },
     "newsletter": {
       "type": "newsletter",
       "settings": {
@@ -87,10 +160,12 @@
   },
   "order": [
     "image-banner",
+    "trust-badges",
     "featured_collection_YAPL9E",
     "featured-collection",
     "featured-collection-2",
     "split-feature",
+    "testimonials",
     "newsletter"
   ]
 }

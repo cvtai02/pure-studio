@@ -1,5 +1,5 @@
 {%- comment -%}
-  Renders a product card (Ruffwear-inspired)
+  Renders a product card (PawSafe-inspired)
 
   Accepts:
   - product: {Object} Product Liquid object
@@ -65,4 +65,12 @@
       </div>
     </div>
   </a>
+
+  {%- if product.available -%}
+    <div style="padding: 0 1rem 1rem;">
+      <a href="{{ product.url }}" class="product-card__add-to-cart">
+        Shop Now
+      </a>
+    </div>
+  {%- endif -%}
 </div>
