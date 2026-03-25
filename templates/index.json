@@ -11,11 +11,12 @@
   "sections": {
     "image-banner": {
       "type": "image-banner",
+      "custom_css": [],
       "settings": {
         "image": "shopify://shop_images/img-benefits-cat-tree-header.jpg",
         "video_url": "",
         "banner_height": "100vh",
-        "overlay_opacity": 40,
+        "overlay_opacity": 90,
         "eyebrow": "",
         "heading": "Keep Your Pet Safe on Every Adventure",
         "subheading": "Crash-tested, certified safe, and trusted by 500,000+ pet parents worldwide.",
