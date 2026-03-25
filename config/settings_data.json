@@ -24,11 +24,11 @@
     "button_color": "#2ba5b5",
     "button_text_color": "#ffffff",
     "favicon": "shopify://shop_images/favicon.png",
-    "social_facebook_link": "https://www.facebook.com/pawsafe",
-    "social_instagram_link": "https://www.instagram.com/pawsafe",
-    "social_twitter_link": "",
+    "social_facebook_link": "#",
+    "social_instagram_link": "#",
+    "social_twitter_link": "#",
     "social_youtube_link": "",
-    "social_tiktok_link": "https://www.tiktok.com/@pawsafe",
+    "social_tiktok_link": "#",
     "social_pinterest_link": "",
     "sections": {
       "header": {
