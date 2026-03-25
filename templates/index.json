@@ -24,45 +24,6 @@
         "text_alignment": "left"
       }
     },
-    "trust-badges": {
-      "type": "trust-badges",
-      "blocks": {
-        "badge_1": {
-          "type": "badge",
-          "settings": {
-            "icon": "shield",
-            "title": "Crash Tested",
-            "text": "Meets & exceeds FMVSS 213 safety standards"
-          }
-        },
-        "badge_2": {
-          "type": "badge",
-          "settings": {
-            "icon": "star",
-            "title": "Safety Certified",
-            "text": "Independently certified by top safety labs"
-          }
-        },
-        "badge_3": {
-          "type": "badge",
-          "settings": {
-            "icon": "shipping",
-            "title": "Free Shipping",
-            "text": "On all orders over $75"
-          }
-        },
-        "badge_4": {
-          "type": "badge",
-          "settings": {
-            "icon": "return",
-            "title": "30-Day Returns",
-            "text": "Hassle-free return policy"
-          }
-        }
-      },
-      "block_order": ["badge_1", "badge_2", "badge_3", "badge_4"],
-      "settings": {}
-    },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
@@ -72,40 +33,6 @@
         "columns": 4,
         "show_view_all": true,
         "menu": ""
-      }
-    },
-    "category-explorer": {
-      "type": "category-explorer",
-      "blocks": {
-        "cat_1": {
-          "type": "category",
-          "settings": { "label": "Dog Car Seats", "link": "/collections/dog-car-seats" }
-        },
-        "cat_2": {
-          "type": "category",
-          "settings": { "label": "Dog Harnesses", "link": "/collections/dog-harnesses" }
-        },
-        "cat_3": {
-          "type": "category",
-          "settings": { "label": "Seat Covers", "link": "/collections/seat-covers" }
-        },
-        "cat_4": {
-          "type": "category",
-          "settings": { "label": "Booster Seats", "link": "/collections/dog-booster-seats" }
-        },
-        "cat_5": {
-          "type": "category",
-          "settings": { "label": "Cat Carriers", "link": "/collections/cat-carriers" }
-        },
-        "cat_6": {
-          "type": "category",
-          "settings": { "label": "Accessories", "link": "/collections/accessories" }
-        }
-      },
-      "block_order": ["cat_1", "cat_2", "cat_3", "cat_4", "cat_5", "cat_6"],
-      "settings": {
-        "heading": "Shop By Category",
-        "view_all_link": "/collections/all"
       }
     },
     "promise": {
@@ -144,70 +71,17 @@
           }
         }
       },
-      "block_order": ["pillar_1", "pillar_2", "pillar_3", "pillar_4"],
+      "block_order": [
+        "pillar_1",
+        "pillar_2",
+        "pillar_3",
+        "pillar_4"
+      ],
       "settings": {
         "eyebrow": "Why PawSafe",
         "heading": "Our Promise to You",
         "subheading": "Every product we make starts and ends with one question: will this keep pets safer?",
         "background": "light"
-      }
-    },
-    "split-feature": {
-      "type": "split-feature",
-      "blocks": {
-        "fp_1": {
-          "type": "feature_point",
-          "settings": {
-            "text": "Meets & exceeds FMVSS 213 crash-test standards",
-            "icon": "shield"
-          }
-        },
-        "fp_2": {
-          "type": "feature_point",
-          "settings": {
-            "text": "Independently certified by top-rated safety laboratories",
-            "icon": "checkmark"
-          }
-        },
-        "fp_3": {
-          "type": "feature_point",
-          "settings": {
-            "text": "Recommended by veterinarians nationwide",
-            "icon": "checkmark"
-          }
-        },
-        "stat_1": {
-          "type": "stat",
-          "settings": {
-            "value": "500K+",
-            "label": "Pets Protected"
-          }
-        },
-        "stat_2": {
-          "type": "stat",
-          "settings": {
-            "value": "9x",
-            "label": "Safer than a seatbelt"
-          }
-        },
-        "stat_3": {
-          "type": "stat",
-          "settings": {
-            "value": "#1",
-            "label": "Pet Safety Brand"
-          }
-        }
-      },
-      "block_order": ["fp_1", "fp_2", "fp_3", "stat_1", "stat_2", "stat_3"],
-      "settings": {
-        "image": "shopify://shop_images/Cat_Shopping_List.jpg",
-        "eyebrow": "The PawSafe Difference",
-        "heading": "Safety You Can See & Feel",
-        "text": "Every PawSafe product undergoes rigorous crash testing to protect your furry family member. Our proprietary safety technology has earned the trust of veterinarians, pet safety experts, and over 500,000 pet parents worldwide.",
-        "button_label": "Learn About Our Safety",
-        "button_link": "/pages/our-safety-standards",
-        "content_style": "dark",
-        "reverse_layout": false
       }
     },
     "advice-articles": {
@@ -248,29 +122,22 @@
           }
         }
       },
-      "block_order": ["testimonial_1", "testimonial_2", "testimonial_3"],
+      "block_order": [
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3"
+      ],
       "settings": {
         "heading": "500,000+ Happy Pet Parents",
         "subheading": "Don't just take our word for it — here's what real customers say"
-      }
-    },
-    "newsletter": {
-      "type": "newsletter",
-      "settings": {
-        "heading": "Join the Pack",
-        "subheading": "Get pet safety tips, exclusive deals, and early access to new products delivered straight to your inbox."
       }
     }
   },
   "order": [
     "image-banner",
-    "trust-badges",
     "featured-collection",
-    "category-explorer",
     "promise",
-    "split-feature",
     "advice-articles",
-    "testimonials",
-    "newsletter"
+    "testimonials"
   ]
 }
