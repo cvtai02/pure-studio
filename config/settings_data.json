@@ -12,23 +12,23 @@
     "color_primary": "#2ba5b5",
     "color_secondary": "#1b8a99",
     "color_accent": "#e8573a",
-    "color_text": "#2c3e50",
-    "color_text_light": "#7f8c8d",
+    "color_text": "#1a2332",
+    "color_text_light": "#6b7a8d",
     "color_background": "#ffffff",
-    "color_background_secondary": "#f8fafb",
+    "color_background_secondary": "#f5f8fa",
     "type_body_font_size": 16,
     "type_header_font_size_scale": 100,
     "page_width": 1400,
-    "section_spacing": 64,
+    "section_spacing": 72,
     "button_border_radius": 30,
     "button_color": "#2ba5b5",
     "button_text_color": "#ffffff",
     "favicon": "shopify://shop_images/favicon.png",
-    "social_facebook_link": "https://www.facebook.com/cv.tai02",
-    "social_instagram_link": "",
+    "social_facebook_link": "https://www.facebook.com/pawsafe",
+    "social_instagram_link": "https://www.instagram.com/pawsafe",
     "social_twitter_link": "",
     "social_youtube_link": "",
-    "social_tiktok_link": "",
+    "social_tiktok_link": "https://www.tiktok.com/@pawsafe",
     "social_pinterest_link": "",
     "sections": {
       "header": {
@@ -36,43 +36,44 @@
         "settings": {
           "sticky_header": true,
           "transparent_header": false,
-          "announcement_text": "Free shipping on orders over $50 — Shop New Arrivals 🐾"
+          "announcement_text": "🐾 FREE Shipping on orders $75+ &nbsp;|&nbsp; Use code PAWSAFE for 15% off your first order"
         }
       },
       "footer": {
         "type": "footer",
         "blocks": {
-          "menu_1": {
+          "brand_block": {
+            "type": "text",
+            "settings": {
+              "heading": "",
+              "text": "Keeping pets safe since 2015. Our mission is simple: protect every furry family member on every adventure.",
+              "show_social": true
+            }
+          },
+          "shop_menu": {
             "type": "menu",
             "settings": {
               "heading": "Shop"
             }
           },
-          "menu_2": {
+          "help_menu": {
             "type": "menu",
             "settings": {
-              "heading": "Help & Info"
+              "heading": "Customer Care"
             }
           },
-          "social": {
-            "type": "social",
+          "learn_menu": {
+            "type": "menu",
             "settings": {
-              "heading": "Follow Us"
-            }
-          },
-          "newsletter_block": {
-            "type": "newsletter",
-            "settings": {
-              "heading": "Stay Connected",
-              "text": "Subscribe for exclusive deals, new arrivals, and pet care tips."
+              "heading": "Learn More"
             }
           }
         },
         "block_order": [
-          "menu_1",
-          "menu_2",
-          "social",
-          "newsletter_block"
+          "brand_block",
+          "shop_menu",
+          "help_menu",
+          "learn_menu"
         ],
         "settings": {}
       }

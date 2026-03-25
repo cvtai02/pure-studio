@@ -1,9 +1,17 @@
 <section class="section-category-explorer" data-section-id="{{ section.id }}">
   <div class="page-width">
     <div class="carousel" data-carousel>
-      <div class="carousel__header">
+      <div class="carousel__header category-explorer__header">
         {%- if section.settings.heading != blank -%}
           <h2 class="carousel__heading section-heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.view_all_link != blank -%}
+          <a href="{{ section.settings.view_all_link }}" class="category-explorer__view-all">
+            View All
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
         {%- endif -%}
       </div>
 
@@ -57,6 +65,12 @@
       "id": "heading",
       "label": "Heading",
       "default": "Explore Categories"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "\"View All\" link",
+      "info": "Optional link shown next to heading"
     }
   ],
   "blocks": [

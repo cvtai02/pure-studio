@@ -2,16 +2,16 @@
    PureStudio Theme - Trust Badges / Benefits Bar
    ============================================ */
 .section-trust-badges {
-  padding: calc(var(--section-spacing) * 0.75) 0;
-  background-color: var(--color-background-secondary);
-  border-top: 1px solid rgba(0,0,0,0.04);
-  border-bottom: 1px solid rgba(0,0,0,0.04);
+  padding: calc(var(--section-spacing) * 0.65) 0;
+  background-color: #fff;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .trust-badges__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  gap: 1.5rem;
   text-align: center;
 }
 
@@ -20,31 +20,43 @@
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
-  padding: 1.25rem 1rem;
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  transition: background 0.2s ease;
+}
+
+.trust-badge:hover {
+  background: var(--color-background-secondary);
 }
 
 .trust-badge__icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  color: #fff;
+  background: rgba(43, 165, 181, 0.1);
+  color: var(--color-primary);
   flex-shrink: 0;
+  transition: background 0.2s, color 0.2s;
+}
+
+.trust-badge:hover .trust-badge__icon {
+  background: var(--color-primary);
+  color: #fff;
 }
 
 .trust-badge__icon svg {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
 }
 
 .trust-badge__title {
   font-family: var(--font-heading-family);
   font-size: 0.9375rem;
   font-weight: 700;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
   color: var(--color-text);
 }
 
@@ -53,6 +65,7 @@
   color: var(--color-text-light);
   line-height: 1.5;
   margin: 0;
+  max-width: 180px;
 }
 
 @media (max-width: 990px) {
@@ -63,13 +76,15 @@
 
 @media (max-width: 480px) {
   .trust-badges__grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
 
   .trust-badge {
-    flex-direction: row;
-    text-align: left;
-    padding: 0.75rem 0;
+    padding: 1.25rem 0.75rem;
+  }
+
+  .trust-badge__text {
+    font-size: 0.75rem;
   }
 }

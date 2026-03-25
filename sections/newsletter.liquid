@@ -1,5 +1,6 @@
 <section class="newsletter section-{{ section.id }}" data-section-id="{{ section.id }}">
   <div class="page-width newsletter__wrapper text-center">
+    <p class="newsletter__eyebrow">🐾 Join Our Community</p>
     {%- if section.settings.heading != blank -%}
       <h2 class="newsletter__heading section-heading">{{ section.settings.heading }}</h2>
     {%- endif -%}
@@ -37,6 +38,7 @@
         </button>
       </div>
     {% endform %}
+    <p class="newsletter__privacy">No spam, ever. Unsubscribe any time. We respect your privacy.</p>
   </div>
 </section>
 

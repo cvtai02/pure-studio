@@ -14,12 +14,12 @@
       "settings": {
         "image": "shopify://shop_images/banner.jpg",
         "video_url": "",
-        "banner_height": "450",
-        "overlay_opacity": 90,
-        "eyebrow": "",
-        "heading": "THE PET PARADISE",
-        "subheading": "Everything your best friend deserves",
-        "button_label": "Shop Now",
+        "banner_height": "100vh",
+        "overlay_opacity": 40,
+        "eyebrow": "Award-Winning Pet Safety",
+        "heading": "Keep Your Pet Safe on Every Adventure",
+        "subheading": "Crash-tested, certified safe, and trusted by 500,000+ pet parents worldwide.",
+        "button_label": "Shop Safety Gear",
         "button_link": "shopify://collections/all",
         "text_alignment": "left"
       }
@@ -30,73 +30,96 @@
         "badge_1": {
           "type": "badge",
           "settings": {
-            "icon": "shipping",
-            "title": "Free Shipping",
-            "text": "On orders over $50"
+            "icon": "shield",
+            "title": "Crash Tested",
+            "text": "Meets & exceeds FMVSS 213 safety standards"
           }
         },
         "badge_2": {
           "type": "badge",
           "settings": {
-            "icon": "shield",
-            "title": "Satisfaction Guaranteed",
-            "text": "30-day money back guarantee"
+            "icon": "star",
+            "title": "Safety Certified",
+            "text": "Independently certified by top safety labs"
           }
         },
         "badge_3": {
           "type": "badge",
           "settings": {
-            "icon": "paw",
-            "title": "Pet Safe Materials",
-            "text": "100% safe for your pets"
+            "icon": "shipping",
+            "title": "Free Shipping",
+            "text": "On all orders over $75"
           }
         },
         "badge_4": {
           "type": "badge",
           "settings": {
-            "icon": "heart",
-            "title": "24/7 Support",
-            "text": "We're here to help"
+            "icon": "return",
+            "title": "30-Day Returns",
+            "text": "Hassle-free return policy"
           }
         }
       },
       "block_order": ["badge_1", "badge_2", "badge_3", "badge_4"],
       "settings": {}
     },
-    "featured_collection_YAPL9E": {
-      "type": "featured-collection",
-      "name": "Cat",
+    "category-explorer": {
+      "type": "category-explorer",
+      "blocks": {
+        "cat_1": {
+          "type": "category",
+          "settings": {
+            "label": "Dog Car Seats",
+            "link": "/collections/dog-car-seats"
+          }
+        },
+        "cat_2": {
+          "type": "category",
+          "settings": {
+            "label": "Dog Harnesses",
+            "link": "/collections/dog-harnesses"
+          }
+        },
+        "cat_3": {
+          "type": "category",
+          "settings": {
+            "label": "Seat Covers",
+            "link": "/collections/seat-covers"
+          }
+        },
+        "cat_4": {
+          "type": "category",
+          "settings": {
+            "label": "Booster Seats",
+            "link": "/collections/dog-booster-seats"
+          }
+        },
+        "cat_5": {
+          "type": "category",
+          "settings": {
+            "label": "Cat Carriers",
+            "link": "/collections/cat-carriers"
+          }
+        },
+        "cat_6": {
+          "type": "category",
+          "settings": {
+            "label": "Accessories",
+            "link": "/collections/accessories"
+          }
+        }
+      },
+      "block_order": ["cat_1", "cat_2", "cat_3", "cat_4", "cat_5", "cat_6"],
       "settings": {
-        "heading": "Cat Clothes Trending",
-        "collection": "cat-clothes-trending",
-        "products_to_show": 8,
-        "columns": 4,
-        "show_view_all": true,
-        "menu": ""
+        "heading": "Shop By Category",
+        "view_all_link": "/collections/all"
       }
     },
     "featured-collection": {
       "type": "featured-collection",
-      "custom_css": [
-        ".product-card-wrapper .card__content {position: relative;}",
-        ".product-card-wrapper .card__information > * {display: inline-block; margin-right: 1rem; vertical-align: middle;}"
-      ],
-      "name": "Dog",
       "settings": {
-        "heading": "Dog Clothes Trending",
-        "collection": "dog-clothes",
-        "products_to_show": 8,
-        "columns": 4,
-        "show_view_all": true,
-        "menu": ""
-      }
-    },
-    "featured-collection-2": {
-      "type": "featured-collection",
-      "name": "Specials",
-      "settings": {
-        "heading": "Explore Specials",
-        "collection": "dog-and-cat-collar",
+        "heading": "Our Best Sellers",
+        "collection": "all",
         "products_to_show": 8,
         "columns": 4,
         "show_view_all": true,
@@ -105,13 +128,58 @@
     },
     "split-feature": {
       "type": "split-feature",
+      "blocks": {
+        "fp_1": {
+          "type": "feature_point",
+          "settings": {
+            "text": "Meets & exceeds FMVSS 213 crash-test standards",
+            "icon": "shield"
+          }
+        },
+        "fp_2": {
+          "type": "feature_point",
+          "settings": {
+            "text": "Independently certified by top-rated safety laboratories",
+            "icon": "checkmark"
+          }
+        },
+        "fp_3": {
+          "type": "feature_point",
+          "settings": {
+            "text": "Recommended by veterinarians nationwide",
+            "icon": "checkmark"
+          }
+        },
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "value": "500K+",
+            "label": "Pets Protected"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "value": "9x",
+            "label": "Safer than a seatbelt"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "value": "#1",
+            "label": "Pet Safety Brand"
+          }
+        }
+      },
+      "block_order": ["fp_1", "fp_2", "fp_3", "stat_1", "stat_2", "stat_3"],
       "settings": {
         "image": "shopify://shop_images/Cat_Shopping_List.jpg",
-        "eyebrow": "Featured Collection",
-        "heading": "The Collection",
-        "text": "A curated collection of premium essentials designed to bring comfort, style, and joy to your beloved pets.",
-        "button_label": "Shop the Collection",
-        "button_link": "",
+        "eyebrow": "The PawSafe Difference",
+        "heading": "Safety You Can See & Feel",
+        "text": "Every PawSafe product undergoes rigorous crash testing to protect your furry family member. Our proprietary safety technology has earned the trust of veterinarians, pet safety experts, and over 500,000 pet parents worldwide.",
+        "button_label": "Learn About Our Safety",
+        "button_link": "/pages/our-safety-standards",
         "content_style": "dark",
         "reverse_layout": false
       }
@@ -123,7 +191,7 @@
           "type": "testimonial",
           "settings": {
             "author": "Sarah M.",
-            "text": "My dog absolutely loves the clothes from this store! Great quality and fast shipping. Will definitely order again.",
+            "text": "The PawSafe car seat has been a game changer for us. My dog is calm and secure on every road trip. Worth every penny for the peace of mind it gives me!",
             "rating": 5
           }
         },
@@ -131,7 +199,7 @@
           "type": "testimonial",
           "settings": {
             "author": "James K.",
-            "text": "The cat outfits are adorable and my cats actually don't mind wearing them. Perfect fit and premium materials.",
+            "text": "After a minor fender-bender, my dog was completely unharmed thanks to the PawSafe harness. The crash-test certification isn't just marketing — it truly works.",
             "rating": 5
           }
         },
@@ -139,31 +207,30 @@
           "type": "testimonial",
           "settings": {
             "author": "Emily R.",
-            "text": "Best pet store I've found online. Amazing customer service and the products are top-notch. My pets are living their best lives!",
+            "text": "Easy to install, stylish, and most importantly my pup loves it. She jumps right in whenever I open the door. Best investment for any dog parent.",
             "rating": 5
           }
         }
       },
       "block_order": ["testimonial_1", "testimonial_2", "testimonial_3"],
       "settings": {
-        "heading": "What Pet Parents Say",
-        "subheading": "Join thousands of happy pet owners who trust us"
+        "heading": "500,000+ Happy Pet Parents",
+        "subheading": "Don't just take our word for it — here's what real customers say"
       }
     },
     "newsletter": {
       "type": "newsletter",
       "settings": {
-        "heading": "Join The Pack",
-        "subheading": "Sign up for our newsletter and stay on track with the latest gear and exclusive offers."
+        "heading": "Join the Pack",
+        "subheading": "Get pet safety tips, exclusive deals, and early access to new products delivered straight to your inbox."
       }
     }
   },
   "order": [
     "image-banner",
     "trust-badges",
-    "featured_collection_YAPL9E",
+    "category-explorer",
     "featured-collection",
-    "featured-collection-2",
     "split-feature",
     "testimonials",
     "newsletter"

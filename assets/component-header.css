@@ -6,26 +6,46 @@
    Announcement Bar
    ============================================ */
 .announcement-bar {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background: #1a1a2e;
   color: #fff;
   text-align: center;
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.02em;
   overflow: hidden;
 }
 
-.announcement-bar a {
+.announcement-bar__inner {
+  padding: 0.625rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.announcement-bar__icon {
+  flex-shrink: 0;
+  font-size: 1em;
+}
+
+.announcement-bar__link {
   color: #fff;
   text-decoration: none;
-  display: block;
-  padding: 0.625rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   transition: opacity 0.2s ease;
 }
 
-.announcement-bar a:hover {
+.announcement-bar__link:hover {
   opacity: 0.85;
   color: #fff;
+}
+
+.announcement-bar__text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* ============================================
@@ -88,11 +108,21 @@
 
 .header__logo-text {
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   font-size: 1.5rem;
   font-weight: 800;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   text-transform: none;
   color: var(--color-primary);
+}
+
+.header__logo-paw {
+  width: 28px;
+  height: 28px;
+  color: var(--color-primary);
+  flex-shrink: 0;
 }
 
 .header__nav {
@@ -140,8 +170,13 @@
   width: 100%;
 }
 
-.header__menu-link:hover {
+.header__menu-link:hover,
+.header__menu-link--active {
   color: var(--color-primary);
+}
+
+.header__menu-link--active::after {
+  width: 100%;
 }
 
 .header__dropdown {
@@ -188,6 +223,9 @@
 
 .header__icons {
   flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
   justify-content: flex-end;
 }
 
@@ -235,26 +273,6 @@
   background-color: var(--color-background);
 }
 
-.header__wrapper { 
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between; 
-  padding-top: 0.875rem; 
-  padding-bottom: 0.875rem; 
-  gap: 2rem; 
-  position: relative;
-}
-
-
-/* Center logo */
-.header__logo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-}
-
 @media (max-width: 990px) {
   .header__nav {
     display: none;
@@ -274,22 +292,90 @@
     display: block;
   }
 
+  .header__mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+  }
+
+  .header__mobile-menu-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--color-primary);
+  }
+
+  .header__mobile-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text);
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s;
+  }
+
+  .header__mobile-close:hover {
+    background: rgba(0,0,0,0.06);
+  }
+
   .header__mobile-menu-list {
-    padding: 1rem 0;
+    padding: 0.5rem 0;
+  }
+
+  .header__mobile-menu-item {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
   }
 
   .header__mobile-menu-link {
     display: block;
-    padding: 0.875rem 2rem;
+    padding: 0.875rem 1.5rem;
     color: var(--color-text);
     font-size: 0.9375rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
+    letter-spacing: 0.01em;
+    transition: background 0.15s;
   }
 
-  .header__mobile-menu-link:hover {
+  .header__mobile-menu-link:hover,
+  .header__mobile-menu-link.is-active {
     background-color: var(--color-background-secondary);
+    color: var(--color-primary);
+  }
+
+  .header__mobile-submenu {
+    background: var(--color-background-secondary);
+  }
+
+  .header__mobile-submenu-link {
+    display: block;
+    padding: 0.625rem 2.25rem;
+    color: var(--color-text-light);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+
+  .header__mobile-submenu-link:hover {
+    color: var(--color-primary);
+  }
+
+  .header__mobile-menu-footer {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.07);
+    margin-top: auto;
+  }
+
+  .header__mobile-menu-footer .header__mobile-menu-link {
+    border-bottom: none;
+    padding: 0;
+    font-size: 0.875rem;
+    color: var(--color-text-light);
   }
 }
