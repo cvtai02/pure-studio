@@ -1,0 +1,69 @@
+/* ============================================
+   PureStudio Theme - Newsletter
+   ============================================ */
+.section-newsletter {
+  padding: calc(var(--section-spacing) * 1.5) 0;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: #fff;
+}
+
+.newsletter__wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter__heading {
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.newsletter__subheading {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 2rem;
+  font-size: 1.0625rem;
+}
+
+.newsletter__form-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.newsletter__input {
+  flex: 1;
+  background-color: transparent;
+  border: 2px solid rgba(255,255,255,0.35);
+  color: #fff;
+  padding: 0.875rem 1.25rem;
+  border-radius: 30px;
+}
+
+.newsletter__input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.newsletter__input:focus {
+  border-color: #fff;
+  outline: none;
+  box-shadow: none;
+}
+
+.newsletter__button {
+  white-space: nowrap;
+  background-color: #fff;
+  color: var(--color-primary);
+  border-color: #fff;
+  font-weight: 700;
+  border-radius: 30px;
+}
+
+.newsletter__button:hover {
+  background-color: rgba(255,255,255,0.9);
+  color: var(--color-secondary);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 480px) {
+  .newsletter__form-group {
+    flex-direction: column;
+  }
+}

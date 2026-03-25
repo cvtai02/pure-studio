@@ -1,0 +1,23 @@
+/* ============================================
+   PureStudio Theme - 404 Page
+   ============================================ */
+.main-404 {
+  padding: 6rem 0;
+}
+
+.main-404__eyebrow {
+  margin-bottom: 0.5rem;
+}
+
+.main-404__heading {
+  font-size: 10rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.05em;
+}
+
+.main-404__text {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: var(--color-text-light);
+}

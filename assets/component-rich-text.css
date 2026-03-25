@@ -1,0 +1,50 @@
+/* ============================================
+   PureStudio Theme - Rich Text
+   ============================================ */
+.section-rich-text {
+  padding: var(--section-spacing) 0;
+}
+
+.rich-text__wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.rich-text__text {
+  margin-bottom: 1.5rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+/* Rich Text with Background Image */
+.section-rich-text--has-bg {
+  position: relative;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+}
+
+.rich-text__bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rich-text__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.section-rich-text--has-bg .rich-text__wrapper {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.section-rich-text--has-bg .rich-text__heading,
+.section-rich-text--has-bg h2 {
+  color: #fff;
+}

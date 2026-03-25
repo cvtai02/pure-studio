@@ -1,0 +1,108 @@
+/* ============================================
+   PureStudio Theme - Footer & Social Icons
+   ============================================ */
+.section-footer {
+  border-top: none;
+}
+
+.footer {
+  padding: 4rem 0 2rem;
+  background-color: #1b2a3d;
+  color: #fff;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.footer__heading {
+  color: #fff;
+  margin-bottom: 1.25rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.footer__menu-link {
+  display: block;
+  padding: 0.3rem 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.footer__menu-link:hover {
+  color: #fff;
+}
+
+.footer__text {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.footer__copyright {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.8125rem;
+}
+
+.footer__payment-list {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.icon-payment {
+  width: 38px;
+  height: 24px;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-icons__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+  transition: color 0.2s ease;
+}
+
+.social-icons__link:hover {
+  color: #fff;
+}
+
+/* Footer in non-footer context reset */
+.template-index .social-icons__link,
+.template-page .social-icons__link,
+.template-blog .social-icons__link {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ============================================
+   Related Products
+   ============================================ */
+.section-related-products {
+  padding: var(--section-spacing) 0;
+  border-top: 1px solid #e5e5e5;
+}

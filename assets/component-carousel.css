@@ -1,0 +1,102 @@
+/* ============================================
+   PureStudio Theme - Scrollable Carousel
+   ============================================ */
+.carousel {
+  position: relative;
+}
+
+.carousel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.75rem;
+}
+
+.carousel__heading {
+  margin-bottom: 0;
+}
+
+.carousel__nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.carousel__btn {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  color: var(--color-text);
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.carousel__btn svg {
+  width: 30px;
+  height: 30px;
+}
+
+.carousel__btn:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.12);
+}
+
+.carousel__btn:disabled {
+  opacity: 0.15;
+  cursor: default;
+}
+
+.carousel__btn:disabled:hover {
+  opacity: 0.15;
+  background: rgba(255, 255, 255, 0.15);
+  transform: none;
+}
+
+.carousel__track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 0.5rem;
+}
+
+.carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel__slide {
+  flex: 0 0 calc(25% - 0.9375rem);
+  scroll-snap-align: start;
+  min-width: 260px;
+}
+
+@media (max-width: 990px) {
+  .carousel__slide {
+    flex: 0 0 calc(33.333% - 0.833rem);
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 749px) {
+  .carousel__slide {
+    flex: 0 0 48%;
+    min-width: 0;
+  }
+}

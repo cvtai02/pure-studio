@@ -1,0 +1,83 @@
+/* ============================================
+   PureStudio Theme - Cart
+   ============================================ */
+.main-cart {
+  padding: var(--section-spacing) 0;
+}
+
+.cart__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.cart__header {
+  padding: 1rem 0;
+  border-bottom: 2px solid #2c3e50;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  text-align: left;
+}
+
+.cart__item td {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e5e5e5;
+  vertical-align: middle;
+}
+
+.cart__item-image img {
+  width: 100px;
+  border-radius: 0;
+}
+
+.cart__item-title {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.cart__item-variant {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.cart__quantity-input {
+  width: 70px;
+  text-align: center;
+}
+
+.cart__footer {
+  text-align: right;
+}
+
+.cart__subtotal {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.cart__note {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.cart__empty {
+  padding: 4rem 0;
+}
+
+.cart__empty p {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+}
+
+@media (max-width: 749px) {
+  .cart__table thead { display: none; }
+  .cart__item { display: flex; flex-wrap: wrap; }
+  .cart__item td { border: none; padding: 0.5rem 0; }
+}

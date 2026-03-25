@@ -24,9 +24,31 @@
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
 
-    {% comment %} CSS {% endcomment %}
+    {% comment %} CSS - Foundation {% endcomment %}
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'component-variables.css' | asset_url | stylesheet_tag }}
+
+    {% comment %} CSS - Components {% endcomment %}
+    {{ 'component-buttons.css' | asset_url | stylesheet_tag }}
+    {{ 'component-forms.css' | asset_url | stylesheet_tag }}
+    {{ 'component-header.css' | asset_url | stylesheet_tag }}
+    {{ 'component-hero.css' | asset_url | stylesheet_tag }}
+    {{ 'component-carousel.css' | asset_url | stylesheet_tag }}
+    {{ 'component-product-card.css' | asset_url | stylesheet_tag }}
+    {{ 'component-product.css' | asset_url | stylesheet_tag }}
+    {{ 'component-collection.css' | asset_url | stylesheet_tag }}
+    {{ 'component-category-explorer.css' | asset_url | stylesheet_tag }}
+    {{ 'component-split-feature.css' | asset_url | stylesheet_tag }}
+    {{ 'component-cart.css' | asset_url | stylesheet_tag }}
+    {{ 'component-rich-text.css' | asset_url | stylesheet_tag }}
+    {{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
+    {{ 'component-blog.css' | asset_url | stylesheet_tag }}
+    {{ 'component-search.css' | asset_url | stylesheet_tag }}
+    {{ 'component-404.css' | asset_url | stylesheet_tag }}
+    {{ 'component-footer.css' | asset_url | stylesheet_tag }}
+    {{ 'component-pagination.css' | asset_url | stylesheet_tag }}
+    {{ 'component-trust-badges.css' | asset_url | stylesheet_tag }}
+    {{ 'component-testimonials.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>

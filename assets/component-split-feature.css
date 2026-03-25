@@ -1,0 +1,176 @@
+/* ============================================
+   PureStudio Theme - Split Feature & Feature Banner
+   ============================================ */
+
+/* ============================================
+   Split Feature Banner
+   ============================================ */
+.split-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 600px;
+}
+
+.split-feature--reverse {
+  direction: rtl;
+}
+
+.split-feature--reverse > * {
+  direction: ltr;
+}
+
+.split-feature__media {
+  position: relative;
+  overflow: hidden;
+}
+
+.split-feature__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.split-feature__media-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2d3a50 0%, #1a1a2e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.split-feature__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.split-feature__content--dark {
+  background-color: #1b2a3d;
+  color: #fff;
+}
+
+.split-feature__content--dark h2,
+.split-feature__content--dark h3 {
+  color: #fff;
+}
+
+.split-feature__content--light {
+  background-color: var(--color-background-secondary);
+}
+
+.split-feature__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.split-feature__heading {
+  font-size: calc(2.5rem * var(--font-heading-scale));
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.split-feature__text {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  opacity: 0.85;
+}
+
+@media (max-width: 749px) {
+  .split-feature {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .split-feature__media {
+    aspect-ratio: 4/3;
+  }
+
+  .split-feature__content {
+    padding: 3rem 2rem;
+  }
+
+  .split-feature__heading {
+    font-size: calc(1.75rem * var(--font-heading-scale));
+  }
+}
+
+/* ============================================
+   Full-Width Feature Banner
+   ============================================ */
+.feature-banner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+}
+
+.feature-banner__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.feature-banner__bg-placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d3a50 50%, #1a1a2e 100%);
+}
+
+.feature-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+}
+
+.feature-banner__content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  color: #fff;
+}
+
+.feature-banner__content h2 {
+  color: #fff;
+}
+
+.feature-banner__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.feature-banner__text {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  opacity: 0.85;
+}
+
+@media (max-width: 989px) {
+  .feature-banner {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 749px) {
+  .feature-banner {
+    aspect-ratio: 4 / 3;
+  }
+}

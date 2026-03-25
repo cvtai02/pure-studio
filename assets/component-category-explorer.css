@@ -1,0 +1,64 @@
+/* ============================================
+   PureStudio Theme - Category Explorer
+   ============================================ */
+.section-category-explorer {
+  padding: var(--section-spacing) 0;
+}
+
+.category-explorer__track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 0.5rem;
+}
+
+.category-explorer__track::-webkit-scrollbar {
+  display: none;
+}
+
+.category-explorer__item {
+  flex: 0 0 calc(16.666% - 1.04rem);
+  min-width: 160px;
+  scroll-snap-align: start;
+  text-align: center;
+}
+
+.category-explorer__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.category-explorer__image {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--card-radius, 16px);
+  margin-bottom: 1rem;
+  background-color: var(--color-background-secondary);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.category-explorer__link:hover .category-explorer__image {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.category-explorer__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  color: var(--color-text);
+}
+
+@media (max-width: 749px) {
+  .category-explorer__item {
+    flex: 0 0 35%;
+    min-width: 120px;
+  }
+}

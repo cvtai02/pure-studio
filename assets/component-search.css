@@ -1,0 +1,36 @@
+/* ============================================
+   PureStudio Theme - Search
+   ============================================ */
+.main-search {
+  padding: var(--section-spacing) 0;
+}
+
+.search__form {
+  margin-bottom: 2rem;
+}
+
+.search__input-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search__input {
+  flex: 1;
+}
+
+.search__results-count {
+  margin-bottom: 1.5rem;
+  color: var(--color-text-light);
+}
+
+.search__result-item h3 {
+  margin-bottom: 0.5rem;
+}
+
+.search__no-results {
+  text-align: center;
+  padding: 2rem 0;
+  color: var(--color-text-light);
+}
