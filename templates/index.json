@@ -131,13 +131,6 @@
         "heading": "500,000+ Happy Pet Parents",
         "subheading": "Don't just take our word for it — here's what real customers say"
       }
-    },
-    "newsletter": {
-      "type": "newsletter",
-      "settings": {
-        "heading": "Join the Pack",
-        "subheading": "Get pet safety tips, exclusive deals, and early access to new products delivered straight to your inbox."
-      }
     }
   },
   "order": [
@@ -145,7 +138,6 @@
     "featured-collection",
     "promise",
     "advice-articles",
-    "testimonials",
-    "newsletter"
+    "testimonials"
   ]
 }
