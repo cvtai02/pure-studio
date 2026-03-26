@@ -326,16 +326,6 @@
   padding-bottom: 1.5rem;
 }
 
-.product__share-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 0.875rem;
-  text-decoration: underline;
-  color: var(--color-text);
-  padding: 0;
-}
-
 .product__description-full {
   margin-top: 3rem;
   padding-top: 2.5rem;

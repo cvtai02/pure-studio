@@ -147,20 +147,6 @@
             {{ 'products.product.sold_out' | t }}
           </button>
         {%- endif -%}
-
-        {%- if section.settings.show_share_button -%}
-          <details class="product__accordion">
-            <summary class="product__accordion-header">
-              <span>Share</span>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 4.5L7 10.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </summary>
-            <div class="product__accordion-content">
-              <button class="product__share-btn" data-share-url="{{ product.url | prepend: request.origin }}" type="button">
-                Copy link
-              </button>
-            </div>
-          </details>
-        {%- endif -%}
       </div>
     </div>
 
@@ -179,19 +165,13 @@
 {
   "name": "Product information",
   "tag": "section",
-  "class": "section-main-product",
+  "class": "section-main-product__wrapper",
   "settings": [
     {
       "type": "checkbox",
       "id": "show_vendor",
       "label": "Show vendor",
       "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "show_share_button",
-      "label": "Show share button",
-      "default": true
     }
   ]
 }

@@ -171,23 +171,6 @@
       }
     });
   });
-
-  /* ----------------------------------------
-     Share Button
-  ---------------------------------------- */
-  document.querySelectorAll('.product__share-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var url = btn.getAttribute('data-share-url');
-      if (url && navigator.clipboard) {
-        navigator.clipboard.writeText(url).then(function () {
-          var orig = btn.textContent;
-          btn.textContent = 'Copied!';
-          setTimeout(function () { btn.textContent = orig; }, 2000);
-        });
-      }
-    });
-  });
-
   /* ----------------------------------------
      Product Variant Selection
   ---------------------------------------- */
