@@ -344,6 +344,19 @@
   color: var(--color-text);
 }
 
+.product__description-content p {
+  margin-bottom: 1rem;
+}
+.product__description-content h2 {
+  font-size: calc(1.5rem * var(--font-heading-scale)); 
+}
+
+.product__description-content ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
 @media (max-width: 749px) {
   .product__wrapper.grid--2 {
     grid-template-columns: 1fr;
