@@ -14,13 +14,6 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "newsletter_LjMJTb": {
-          "type": "newsletter",
-          "settings": {
-            "heading": "Stay Connected",
-            "text": "Subscribe for updates on new gear and exclusive deals."
-          }
-        },
         "brand_block": {
           "type": "text",
           "settings": {
@@ -58,7 +51,6 @@
         }
       },
       "block_order": [
-        "newsletter_LjMJTb",
         "brand_block",
         "shop_menu",
         "help_menu",
