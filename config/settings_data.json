@@ -88,6 +88,11 @@
         "type": "shopify://apps/judge-me-reviews/blocks/popup_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
         "settings": {}
+      },
+      "9752555012629308362": {
+        "type": "shopify://apps/parkour-facebook-pixel/blocks/threasury_pixel/f23b2ffe-4c53-446e-ad3a-7976ffbee5c2",
+        "disabled": false,
+        "settings": {}
       }
     }
   }
