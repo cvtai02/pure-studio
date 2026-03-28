@@ -105,20 +105,38 @@
                 <label class="product__option-label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
                   {{ option.name }}
                 </label>
-                <select
-                  id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                  class="product__option-select field__input"
-                  name="options[{{ option.name | escape }}]"
-                >
-                  {%- for value in option.values -%}
-                    <option
-                      value="{{ value | escape }}"
-                      {% if option.selected_value == value %}selected{% endif %}
-                    >
-                      {{ value }}
-                    </option>
-                  {%- endfor -%}
-                </select>
+                {%- if forloop.first -%}
+                  <div class="product__option-rectangles">
+                    {%- for value in option.values -%}
+                      <button type="button"
+                        class="product__option-rectangle{% if option.selected_value == value %} product__option-rectangle--active{% endif %}"
+                        data-option-index="{{ forloop.index0 }}"
+                        data-option-value="{{ value | escape }}"
+                        aria-pressed="{% if option.selected_value == value %}true{% else %}false{% endif %}"
+                        style="margin-right: 0.5em; margin-bottom: 0.5em; min-width: 48px; min-height: 36px; border-radius: 0.4em; border: 2px solid #e5e5e5; background: #fff; font-weight: 500; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s;"
+                        onclick="this.closest('form').querySelector('[name=\'options[{{ option.name | escape }}]\']').value='{{ value | escape }}'; this.closest('form').submit();"
+                      >
+                        {{ value }}
+                      </button>
+                    {%- endfor -%}
+                    <input type="hidden" name="options[{{ option.name | escape }}]" value="{{ option.selected_value | escape }}">
+                  </div>
+                {%- else -%}
+                  <select
+                    id="Option-{{ section.id }}-{{ forloop.index0 }}"
+                    class="product__option-select field__input"
+                    name="options[{{ option.name | escape }}]"
+                  >
+                    {%- for value in option.values -%}
+                      <option
+                        value="{{ value | escape }}"
+                        {% if option.selected_value == value %}selected{% endif %}
+                      >
+                        {{ value }}
+                      </option>
+                    {%- endfor -%}
+                  </select>
+                {%- endif -%}
               </div>
             {%- endfor -%}
 
