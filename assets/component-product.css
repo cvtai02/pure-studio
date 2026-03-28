@@ -356,7 +356,7 @@
   margin-bottom: 1rem;
 }
 
-/* Rainbow animated border for product price box */
+/* Enhanced rainbow animated border for product price box - more vibrant and visible */
 .product__price-box {
   position: relative;
   z-index: 1;
@@ -366,13 +366,14 @@
 .product__price-box::before {
   content: '';
   position: absolute;
-  inset: 0;
+  inset: -3px;
   z-index: -1;
-  border-radius: 0.5em;
+  border-radius: 0.6em;
   padding: 0;
-  background: linear-gradient(270deg, #ff3cac, #784ba0, #2b86c5, #42e695, #ff3cac);
-  background-size: 400% 400%;
-  animation: rainbow-border 4s linear infinite;
+  background: linear-gradient(270deg, #ff3cac, #ffb86c, #42e695, #2b86c5, #784ba0, #ff3cac);
+  background-size: 300% 300%;
+  animation: rainbow-border 2.5s linear infinite;
+  filter: brightness(1.2) saturate(1.8) drop-shadow(0 0 8px #fff3);
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box, 
     linear-gradient(#fff 0 0);
