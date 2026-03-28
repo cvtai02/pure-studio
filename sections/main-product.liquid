@@ -119,7 +119,7 @@
                         data-option-index="{{ forloop.index0 }}"
                         data-option-value="{{ value | escape }}"
                         aria-pressed="{% if option.selected_value == value %}true{% else %}false{% endif %}"
-                        onclick="this.closest('form').querySelector('[name=\'options[{{ option.name | escape }}]\']').value='{{ value | escape }}'; this.closest('form').submit();"
+                        onclick="var input=this.closest('form').querySelector('[name=\'options[{{ option.name | escape }}]\']'); input.value='{{ value | escape }}'; input.dispatchEvent(new Event('change', {bubbles:true}));"
                       >
                         {%- if variant_image -%}
                           <img src="{{ variant_image }}" alt="{{ value }}" />
