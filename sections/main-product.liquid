@@ -190,7 +190,75 @@
         </div>
       </div>
     {%- endif -%}
+</div>
+<!-- Cart Modal -->
+<div class="cart-modal-overlay" id="CartModalOverlay">
+  <div class="cart-modal">
+    <button class="cart-modal-close" onclick="document.getElementById('CartModalOverlay').classList.remove('active')">&times;</button>
+    <div class="cart-modal-header">Your Cart</div>
+    <div class="cart-modal-list" id="CartModalList">
+      <!-- Items will be injected here -->
+    </div>
+    <div class="cart-modal-footer">
+      <a href="/cart" class="cart-modal-checkout">Checkout</a>
+    </div>
   </div>
+</div>
+<script>
+  function showCartModal(items) {
+    var overlay = document.getElementById('CartModalOverlay');
+    var list = document.getElementById('CartModalList');
+    list.innerHTML = '';
+    if (!items || !items.length) {
+      list.innerHTML = '<div style="text-align:center;color:#888;">Your cart is empty.</div>';
+    } else {
+      items.forEach(function(item) {
+        var div = document.createElement('div');
+        div.className = 'cart-modal-item';
+        div.innerHTML =
+          '<img src="' + (item.image || '') + '" alt="' + (item.title || '') + '" />' +
+          '<div class="cart-modal-item-info">' +
+            '<div class="cart-modal-item-title">' + item.title + '</div>' +
+            '<div class="cart-modal-item-qty">Qty: ' + item.quantity + '</div>' +
+          '</div>' +
+          '<div class="cart-modal-item-price">' + item.price + '</div>';
+        list.appendChild(div);
+      });
+    }
+    overlay.classList.add('active');
+  }
+  // Intercept add to cart
+  document.addEventListener('DOMContentLoaded', function() {
+    var form = document.querySelector('.product__form');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var data = new FormData(form);
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: data
+        })
+        .then(function(res) { return res.json(); })
+        .then(function() {
+          return fetch('/cart.js', { headers: { 'Accept': 'application/json' }});
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(cart) {
+          var items = (cart.items || []).map(function(item) {
+            return {
+              image: item.image ? item.image.replace(/_(\d+x\d+|large|medium|small|compact|grande|original)\./, '_100x100.') : '',
+              title: item.product_title + (item.variant_title && item.variant_title !== 'Default Title' ? ' - ' + item.variant_title : ''),
+              quantity: item.quantity,
+              price: Shopify.formatMoney ? Shopify.formatMoney(item.price) : (item.price/100).toFixed(2)
+            };
+          });
+          showCartModal(items);
+        });
+      });
+    }
+  });
+</script>
 </section>
 
 {% schema %}
