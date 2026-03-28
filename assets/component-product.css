@@ -572,13 +572,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.7em;
   flex-wrap: wrap;
   margin-top: 0.2em;
 }
 .safe-checkout-icons img {
-  height: 32px;
+  height: 50px;
   width: auto;
   display: inline-block;
-  padding: 0.15em 0.3em;
 }
