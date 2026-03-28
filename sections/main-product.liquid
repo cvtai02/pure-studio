@@ -243,9 +243,11 @@
   // Intercept add to cart
   document.addEventListener('DOMContentLoaded', function() {
     var form = document.querySelector('.product__form');
-    if (form) {
+    var addBtn = form ? form.querySelector('.product__submit') : null;
+    if (form && addBtn) {
       form.addEventListener('submit', function(e) {
         e.preventDefault();
+        addBtn.disabled = true;
         var data = new FormData(form);
         fetch('/cart/add.js', {
           method: 'POST',
@@ -272,6 +274,26 @@
           showCartModal(items, total);
         });
       });
+      // Re-enable add to cart when modal closes
+      var overlay = document.getElementById('CartModalOverlay');
+      if (overlay) {
+        overlay.addEventListener('transitionend', function() {
+          if (!overlay.classList.contains('active')) addBtn.disabled = false;
+        });
+        // Also re-enable on click outside or Escape
+        overlay.onclick = function(e) {
+          if (e.target === overlay) {
+            overlay.classList.remove('active');
+            addBtn.disabled = false;
+          }
+        };
+        document.onkeydown = function(e) {
+          if (e.key === 'Escape') {
+            overlay.classList.remove('active');
+            addBtn.disabled = false;
+          }
+        };
+      }
     }
   });
 </script>
