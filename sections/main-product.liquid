@@ -185,6 +185,18 @@
                 {{ 'products.product.sold_out' | t }}
               {%- endif -%}
             </button>
+            <div class="safe-checkout-box">
+              <div class="safe-checkout-title">Guaranteed Safe Checkout</div>
+              <div class="safe-checkout-icons">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" title="Visa" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" title="Mastercard" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo_%282018%29.svg" alt="American Express" title="American Express" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Discover_Card_logo.svg" alt="Discover" title="Discover" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Stripe_Logo%2C_revised_2016.svg" alt="Stripe" title="Stripe" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/PayPal_logo.svg" alt="PayPal" title="PayPal" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Ssl_certificate_logo.svg" alt="SSL Secure" title="SSL Secure" />
+              </div>
+            </div>
           {% endform %}
         {%- else -%}
           <button class="button button--primary product__submit" disabled>
