@@ -526,15 +526,25 @@
   font-size: 1.1em;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #ffb6e655;
+}
+.cart-modal-checkout:hover {
+  background: linear-gradient(90deg,#784ba0,#ff3cac);
+  box-shadow: 0 4px 16px #ffb6e655;
 }
 .cart-modal-close {
-  background: none;
-  border: none;
-  font-size: 1.5em;
-  color: #888;
-  cursor: pointer;
-  position: absolute;
-  top: 1em;
-  right: 1.2em;
+  color: #ff3cac;
+  top: 0.7em;
+  right: 1em;
+  font-size: 2em;
+  transition: color 0.2s;
+}
+.cart-modal-close:hover {
+  color: #784ba0;
+}
+#CartModalTotal {
+  color: #784ba0 !important;
+  font-size: 1.15em;
+  font-weight: 700;
 }
