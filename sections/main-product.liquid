@@ -79,7 +79,7 @@
 
         <h1 class="product__title h2">{{ product.title }}</h1>
 
-        <div class="product__price-box" style="border: 2px solid #ffe066; border-radius: 0.5em; padding: 1em; margin-bottom: 1em; display: inline-block; box-shadow: 0 2px 8px rgba(255,224,102,0.2);">
+        <div class="product__price-box" style="border: 2px solid #ffe066; border-radius: 0.5em; padding: 0.5em 1.2em 0.5em 1.2em; margin-bottom: 1em; display: inline-block; box-shadow: 0 2px 8px rgba(255,224,102,0.2);">
           <div class="product__price">
             {%- if product.compare_at_price > product.price -%}
               <span class="product__price--sale">{{ product.price | money }}</span>
@@ -89,9 +89,9 @@
             {%- else -%}
               <span class="product__price--regular">{{ product.price | money }}</span>
             {%- endif -%}
-            <span class="product__badge badge badge--shipping" style="color: #4caf50; font-weight: bold; margin-left: 0.75em; padding: 0.25em 0.75em; border-radius: 0.3em; font-size: 1em; display: inline-flex; align-items: center; gap: 0.4em;">
-              <img src="{{ 'shipping-truck.svg' | asset_url }}" alt="Shipping Truck" width="20" height="20" style="vertical-align: middle; display: inline-block;" loading="lazy" />
-              Free Shipping
+            <span class="product__badge badge badge--shipping" style="color: #4caf50; font-weight: 500; margin-left: 0.75em; padding: 0.1em 0.5em; border-radius: 0.3em; font-size: 0.85em; display: inline-flex; align-items: center; gap: 0.3em;">
+              <img src="{{ 'shipping-truck.svg' | asset_url }}" alt="Shipping Truck" width="16" height="16" style="vertical-align: middle; display: inline-block;" loading="lazy" />
+              <span style="font-size:0.92em;">Free Shipping</span>
             </span>
           </div>
         </div>
