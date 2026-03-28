@@ -194,7 +194,6 @@
 <!-- Cart Modal -->
 <div class="cart-modal-overlay" id="CartModalOverlay">
   <div class="cart-modal">
-    <button class="cart-modal-close" onclick="document.getElementById('CartModalOverlay').classList.remove('active')">&times;</button>
     <div class="cart-modal-header">Your Cart</div>
     <div class="cart-modal-list" id="CartModalList">
       <!-- Items will be injected here -->
@@ -259,15 +258,17 @@
         })
         .then(function(res) { return res.json(); })
         .then(function(cart) {
+          var currency = cart.currency || 'USD';
           var items = (cart.items || []).map(function(item) {
+            var price = Shopify.formatMoney ? Shopify.formatMoney(item.price, window.shopCurrencyFormat || "${{amount}}") : (item.price/100).toFixed(2);
             return {
               image: item.image ? item.image.replace(/_(\d+x\d+|large|medium|small|compact|grande|original)\./, '_100x100.') : '',
               title: item.product_title + (item.variant_title && item.variant_title !== 'Default Title' ? ' - ' + item.variant_title : ''),
               quantity: item.quantity,
-              price: Shopify.formatMoney ? Shopify.formatMoney(item.price) : (item.price/100).toFixed(2)
+              price: price + ' ' + currency
             };
           });
-          var total = Shopify.formatMoney ? Shopify.formatMoney(cart.total_price) : (cart.total_price/100).toFixed(2);
+          var total = (Shopify.formatMoney ? Shopify.formatMoney(cart.total_price, window.shopCurrencyFormat || "${{amount}}") : (cart.total_price/100).toFixed(2)) + ' ' + currency;
           showCartModal(items, total);
         });
       });
