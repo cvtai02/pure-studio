@@ -80,14 +80,15 @@
         <h1 class="product__title h2">{{ product.title }}</h1>
 
         <div class="product__price">
-          {%- if product.compare_at_price > product.price -%}
-            <span class="product__price--sale">{{ product.price | money }}</span>
-            <span class="product__price--compare">{{ product.compare_at_price | money }}</span>
-            {%- assign savings = product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price -%}
-            <span class="product__badge badge badge--sale">Save {{ savings }}%</span>
-          {%- else -%}
-            <span class="product__price--regular">{{ product.price | money }}</span>
-          {%- endif -%}
+            {%- if product.compare_at_price > product.price -%}
+              <span class="product__price--sale" style="background: #ffe066; color: #d35400; font-weight: bold; padding: 0.25em 0.75em; border-radius: 0.3em; font-size: 1.3em;">{{ product.price | money }}</span>
+              <span class="product__price--compare">{{ product.compare_at_price | money }}</span>
+              {%- assign savings = product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price -%}
+              <span class="product__badge badge badge--sale">Save {{ savings }}%</span>
+            {%- else -%}
+              <span class="product__price--regular" style="background: #ffe066; color: #d35400; font-weight: bold; padding: 0.25em 0.75em; border-radius: 0.3em; font-size: 1.3em;">{{ product.price | money }}</span>
+            {%- endif -%}
+            <span class="product__badge badge badge--shipping" style="background: #4caf50; color: #fff; font-weight: bold; margin-left: 0.75em; padding: 0.25em 0.75em; border-radius: 0.3em; font-size: 1em;">Free Shipping</span>
         </div>
 
         {%- if product.available -%}
