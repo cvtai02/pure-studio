@@ -176,9 +176,15 @@
             <div class="safe-checkout-box">
               <div class="safe-checkout-title">Guaranteed Safe Checkout</div>
               <div class="safe-checkout-icons">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Visa_Inc._logo_%282021%E2%80%93present%29.svg" alt="Visa" title="Visa" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" title="Mastercard" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/PayPal_logo.svg" alt="PayPal" title="PayPal" />
+                <img src="{{ 'icons/payment/visa.svg' | asset_url }}" alt="Visa" title="Visa" />
+                <img src="{{ 'icons/payment/mastercard.svg' | asset_url }}" alt="Mastercard" title="Mastercard" />
+                <img src="{{ 'icons/payment/american-express.svg' | asset_url }}" alt="PayPal" title="American Express" />
+                <img src="{{ 'icons/payment/diners-club.svg' | asset_url }}" alt="PayPal" title="PayPal" />
+                <img src="{{ 'icons/payment/discover.svg' | asset_url }}" alt="PayPal" title="PayPal" />
+
+                <img src="{{ 'icons/payment/apple.svg' | asset_url }}" alt="PayPal" title="PayPal" />
+                <img src="{{ 'icons/payment/google.svg' | asset_url }}" alt="PayPal" title="PayPal" />
+                <img src="{{ 'icons/payment/paypal.svg' | asset_url }}" alt="PayPal" title="PayPal" />
               </div>
             </div>
           {% endform %}
