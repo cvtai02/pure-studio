@@ -465,7 +465,7 @@
   box-shadow: 0 8px 32px rgba(0,0,0,0.18);
   max-width: 420px;
   width: 95vw;
-  padding: 2em 1.5em 1.5em 1.5em;
+  padding: 1em 1em 1em 1em;
   display: flex;
   flex-direction: column;
   gap: 1.2em;
@@ -478,7 +478,6 @@
 .cart-modal-header {
   font-size: 1.3em;
   font-weight: 700;
-  margin-bottom: 0.5em;
 }
 .cart-modal-list {
   display: flex;
@@ -492,7 +491,6 @@
   align-items: center;
   gap: 0.7em;
   border-bottom: 1px solid #eee;
-  padding-bottom: 0.5em;
 }
 .cart-modal-item img {
   width: 48px;
@@ -515,7 +513,6 @@
   display: flex;
   justify-content: flex-end;
   gap: 1em;
-  margin-top: 1em;
 }
 .cart-modal-checkout {
   background: linear-gradient(90deg,#ff3cac,#784ba0);
