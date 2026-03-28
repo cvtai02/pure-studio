@@ -580,8 +580,5 @@
   height: 32px;
   width: auto;
   display: inline-block;
-  background: #fff;
-  border-radius: 0.3em;
-  box-shadow: 0 1px 4px #0001;
   padding: 0.15em 0.3em;
 }
