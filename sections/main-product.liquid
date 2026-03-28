@@ -90,7 +90,7 @@
               <span class="product__price--regular">{{ product.price | money }}</span>
             {%- endif -%}
             <span class="product__badge badge badge--shipping" style="color: #4caf50; font-weight: bold; margin-left: 0.75em; padding: 0.25em 0.75em; border-radius: 0.3em; font-size: 1em; display: inline-flex; align-items: center; gap: 0.4em;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" style="vertical-align: middle;"><path d="M3 17V6a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v11m-13 0a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2m-5 0h5m8 0a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2m-5 0h5m-1-5V7a1 1 0 0 0-1-1h-4v6h5zm-2 4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" stroke="#4caf50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <img src="{{ 'shipping-truck.svg' | asset_url }}" alt="Shipping Truck" width="20" height="20" style="vertical-align: middle; display: inline-block;" loading="lazy" />
               Free Shipping
             </span>
           </div>
