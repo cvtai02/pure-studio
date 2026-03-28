@@ -539,10 +539,9 @@
   transition: color 0.2s;
 }
 .cart-modal-close:hover {
-  color: #784ba0;
+  color: #2b86c5;
 }
 #CartModalTotal {
-  color: #784ba0 !important;
-  font-size: 1.15em;
+  color: #2b86c5 !important;
   font-weight: 700;
 }
