@@ -200,17 +200,22 @@
       <!-- Items will be injected here -->
     </div>
     <div class="cart-modal-footer">
+      <div style="flex:1;display:flex;align-items:center;font-weight:600;font-size:1.1em;">
+        Total: <span id="CartModalTotal" style="margin-left:0.5em;color:#ff3cac;"></span>
+      </div>
       <a href="/cart" class="cart-modal-checkout">Checkout</a>
     </div>
   </div>
 </div>
 <script>
-  function showCartModal(items) {
+  function showCartModal(items, total) {
     var overlay = document.getElementById('CartModalOverlay');
     var list = document.getElementById('CartModalList');
+    var totalEl = document.getElementById('CartModalTotal');
     list.innerHTML = '';
     if (!items || !items.length) {
       list.innerHTML = '<div style="text-align:center;color:#888;">Your cart is empty.</div>';
+      if (totalEl) totalEl.textContent = '0';
     } else {
       items.forEach(function(item) {
         var div = document.createElement('div');
@@ -224,8 +229,17 @@
           '<div class="cart-modal-item-price">' + item.price + '</div>';
         list.appendChild(div);
       });
+      if (totalEl) totalEl.textContent = total;
     }
     overlay.classList.add('active');
+    // Allow closing modal by clicking overlay (not modal)
+    overlay.onclick = function(e) {
+      if (e.target === overlay) overlay.classList.remove('active');
+    };
+    // Also close on Escape key
+    document.onkeydown = function(e) {
+      if (e.key === 'Escape') overlay.classList.remove('active');
+    };
   }
   // Intercept add to cart
   document.addEventListener('DOMContentLoaded', function() {
@@ -253,7 +267,8 @@
               price: Shopify.formatMoney ? Shopify.formatMoney(item.price) : (item.price/100).toFixed(2)
             };
           });
-          showCartModal(items);
+          var total = Shopify.formatMoney ? Shopify.formatMoney(cart.total_price) : (cart.total_price/100).toFixed(2);
+          showCartModal(items, total);
         });
       });
     }
