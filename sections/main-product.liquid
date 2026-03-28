@@ -79,7 +79,7 @@
 
         <h1 class="product__title h2">{{ product.title }}</h1>
 
-        <div class="product__price-box" style="border: 2px solid #ffe066; border-radius: 0.5em; padding: 0.5em 1.2em 0.5em 1.2em; margin-bottom: 1em; display: inline-block; box-shadow: 0 2px 8px rgba(255,224,102,0.2);">
+        <div class="product__price-box" style="border: 2px solid #ffe066; border-radius: 0.5em; padding: 0.5em 1.2em; margin-bottom: 1em; display: inline-block; box-shadow: 0 2px 8px rgba(255,224,102,0.2);">
           <div class="product__price">
             {%- if product.compare_at_price > product.price -%}
               <span class="product__price--sale">{{ product.price | money }}</span>
